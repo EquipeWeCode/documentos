@@ -1,2 +1,4 @@
-# estacao-trainee-documentos
-Documentação da aplicação Estação Trainee.
+# documentos
+Documentação da aplicação a ser desenvolvida para a disciplina de PI1A5.
+## Proposta Iinicial
+- Em desenvolvimento
