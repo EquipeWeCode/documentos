@@ -15,9 +15,9 @@
     %subsection=TITLE,  % títulos de subseções convertidos em letras maiúsculas
     %subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
     % Opções que não devem ser utilizadas na versão final do documento
-    draft,              % para compilar mais rápido, remover na versão final
-    MODELO,             % indica que é um documento modelo então precisa dos geradores de texto
-    TODO,               % indica que deve apresentar lista de pendencias 
+    %draft,              % para compilar mais rápido, remover na versão final
+    %MODELO,             % indica que é um documento modelo então precisa dos geradores de texto
+    %TODO,                indica que deve apresentar lista de pendencias 
     % -- opções do pacote babel --
     english,            % idioma adicional para hifenização
     brazil              % o último idioma é o principal do documento
@@ -36,38 +36,40 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{SCRUM}
+\titulo{"Portal de vagas de estágio"}
 
 % Trabalho individual
-\autor{JOSÉ BRAZ DE ARAUJO}
+%\autor{JOSÉ BRAZ DE ARAUJO}
 
 % Trabalho em Equipe
 % ver também https://github.com/abntex/abntex2/wiki/FAQ#como-adicionar-mais-de-um-autor-ao-meu-projeto
-%\renewcommand{\imprimirautor}{
-%\begin{tabular}{lr}
-%Aluno 1  & prontuario1 \\
-%ALUNO 2 com sobrenome grande & prontuario2 \\
-%ALUNO 3 & prontuario3 \\
-%ALUNO 4 & prontuario4 \\
-%\end{tabular}
-%}
+\renewcommand{\imprimirautor}{
+\begin{tabular}{lr}
+Bruna da Silva Pires & SP3056651 \\
+Daniel Roberto Pereira & SP3046702 \\
+Igor Nathan de Oliveira Rocha & SP305263X \\
+Leonardo Marques da Silva & SP3052591 \\
+Lucas Lima de Santana & SP3046559 \\
+Marcelo Carlos Olimpio Junior &SP3046583 \\
+\end{tabular}
+}
 
 
-\tipotrabalho{Projeto da Disciplina XXXX}
+\tipotrabalho{Projeto da Disciplina PI1A5}
 
-\disciplina{XXXXX - Nome da Disciplina}
+\disciplina{PI1A5 - Projeto Integrado I}
 
-\preambulo{Proposta de projeto para disciplina XXXX}
+\preambulo{Proposta de projeto para disciplina PI1A5}
 
-\data{DATA DO TRABALHO}
+\data{2022}
 
 % Definir o que for necessário e comentar o que não for necessário
 % Utilizar o Nome Completo, abntex tem orientador e coorientador
 % então vão ser utilizados na definição de professor
 \renewcommand{\orientadorname}{Professor:}
-\orientador{NOME COMPLETO DO PROFESSOR1}
-\renewcommand{\coorientadorname}{Professor:}
-\coorientador{NOME COMPLETO DO PROFESSOR2}
+\orientador{Carlos Henrique Veríssimo Pereira}
+%\renewcommand{\coorientadorname}{Professor:}
+%\coorientador{NOME COMPLETO DO PROFESSOR2}
 
 
 
@@ -113,14 +115,29 @@
 % Capa - Para proposta a folha de rosto é suficiente pois é mais completa.
 % ---
 \imprimirfolhaderosto
+\newpage
 % ---
-
+% inserir o sumario
+% ---
+%\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
 \textual
+\input{textos-introducao}
 
-\lipsum[3-5]
+% Para facilitar a manutenção é sempre melhore criar um arquivo por capitulo, para exemplo isso não é necessário 
+%\input{textos-desenvolvimento}
+\input{textos-requisitos.tex}
+\input{textos-processos.tex}
+\input{textos-tecnologias.tex}
+
+
+%\input{textos-conclusao}
+
 
 Teste de citação para gerar referências no modelo.. \citeauthor{SCRUMGUIDE:2013}
 
