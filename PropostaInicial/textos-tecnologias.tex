@@ -1,5 +1,6 @@
 \chapter{Tecnologias}
-%Alguma coisa aqui
+Nesse capítulo serão citadas a arquitetura do nosso projeto com ilustrações demonstrando de forma mais lúdica, as possíveis integrações que nossa aplicação terá com sistemas externos.
+
 \section{Arquitetura}
 Para o desenvolvimento do projeto, e tendo em vista que será construída uma aplicação web de página única, utilizaremos de ferramentas que cerceiam o ecossistema de \textit{Single Page Applications}. Para isso, teremos a divisão do projeto em \textit{front-end} e \textit{back-end} de modo que eles se comuniquem via protocolo HTTP com requisições e respostas no formato JSON. Para o desenvolvimento do \textit{front-end} utilizaremos Typescript por meio da biblioteca React; o \textit{back-end} será desenvolvido utilizando Java com o micro \textit{framework} Spring Boot. Um módulo de apoio no lado do servidor poderá ser possível, e para ele utilizaremos Python. 
 
@@ -15,9 +16,9 @@ Os diagramas \autoref{fig_arq_app}, \autoref{fig_arq_tec} e \autoref{fig_arq_neg
 Nessa seção serão citadas as possíveis integrações que nossa aplicação terá, que foram decididas baseadas em outras aplicações do mercado.
 
 \subsection{Login com o Google e LinkedIn}
-Pensando na experiência de usuário, nossa aplicação terá a opção do estudante se logar através do \ac{sso} dessas empresas. Dessa forma, não será necessário digitar a senha toda vez que o usuário for usar nosso website, precisando apenas clicar um botão e fazer o login em uma dessas alternativas.
+Pensando na experiência de usuário, nossa aplicação terá a opção do estudante se logar através do \ac{sso} dessas empresas. Dessa forma, não será necessário digitar a senha toda vez que o usuário for usar nosso \emph{website}, precisando apenas clicar um botão e fazer o login em uma dessas alternativas.
 
-\subsection{Entrar em contato via Whatsapp}
+\subsection{Entrar em contato via \emph{Whatsapp}}
 Nossa aplicação terá, também, uma forma da empresa contatar o estudante via Whatsapp. Essa integração será feita via \ac{api} disponibilizada pela própria empresa que mantém o aplicativo (Meta). Dessa forma, com apenas um clique, será possível enviar uma mensagem diretamente ao estudante.
 
 \begin{figure}[htb]
