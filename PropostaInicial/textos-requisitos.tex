@@ -13,10 +13,9 @@ Durante nossa análise, decidimos que esses seriam os principais requisitos func
 	\item Manter um histórico de candidatos aplicados a vaga;
 	\item Exibir uma linha do tempo da situação da vaga;
 	\item Alertar os estudantes aplicados à vaga sobre cada mudança em seu status;
-	\item Possibilitar o gerenciamento da vaga pela empresa que a registrou/publicou;
 	\item Possibilitar que a empresa possas acionar (entrar em contato) com os estudantes recomendados/aplicados à vaga;
 	\item Possibilitar que a empresa realize mudanças no status da vaga;
-	\item Possibilitar que o estudante realize um \emph{feedback} da empresa pós-entrevista, que será visto por outros estudantes.
+	\item Possibilitar que o estudante realize um \emph{feedback} da empresa pós-entrevista, que será visto por outros estudantes;
 	\item Não permitir o registro de vagas cujas horas de atividades ultrapassem a carga horária prevista por lei de acordo com a situação escolar de cada estudante.
 \end{itemize}
 
@@ -32,20 +31,30 @@ Os requisitos não-funcionais do nosso projeto estão listados abaixo:
 	\item Ter alta escalabilidade;
 	\item Ser fácil de reparar erros;
 	\item Tempo para carregar os dados necessários menor do que 15 segundos;
-	\item Ter uma taxa de falhas menor que 3/1000;
+	\item Ter uma taxa de falhas menor que 3/1000.
 \end{itemize}
 
 \subsection{Requisitos externos}
 
 \begin{itemize}
-	\item O sistema deve estar de acordo com a \ac{lgpd}.
-\end{itemize}
-
-\section{Regras de Negócio}
-\begin{itemize}
+	\item O sistema deve estar de acordo com a \ac{lgpd};
 	\item As vagas registradas pelas empresas para estudantes de educação especial e dos anos finais do ensino fundamental, na modalidade profissional de educação de jovens e adultos, não podem exigir mais de 4horas diárias/20 horas semanais de dedicação para as atividades e no caso de estudantes do ensino superior, da educação profissional de nível médio e do ensino médio regular, 6 horas diárias/30 horas semanais, de acordo com a lei Nº 11.788, de  25 de setembro de 2008.
 	%Art. 10.  A jornada de atividade em estágio será definida de comum acordo entre a instituição de ensino, a parte concedente e o aluno estagiário ou seu representante legal, devendo constar do termo de compromisso ser compatível com as atividades escolares e não ultrapassar: 
 	%I – 4 (quatro) horas diárias e 20 (vinte) horas semanais, no caso de estudantes de educação especial e dos anos finais do ensino fundamental, na modalidade profissional de educação de jovens e adultos; 
 	%II – 6 (seis) horas diárias e 30 (trinta) horas semanais, no caso de estudantes do ensino superior, da educação profissional de nível médio e do ensino médio regular.
+\end{itemize}
+
+\subsection{Requisitos de portabilidade}
+
+\begin{itemize}
+	\item O sistema deve ser responsivo aos diferentes dispositivos que os usuários podem utilizar para acessá-lo.
+\end{itemize}
+
+\section{Regras de Negócio}
+\begin{itemize}
+	\item As vagas devem ser coerentes de acordo com as expectativas dos estudantes;
+	\item Estabelecer uma conexão entre estudantes e empresas de forma justa;
+	\item Manter o processo de candidatura às vagas mais transparente;
+	\item Possibilitar o gerenciamento da vaga pela empresa que a registrou/publicou.
 \end{itemize}
 
