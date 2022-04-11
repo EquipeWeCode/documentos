@@ -4,6 +4,45 @@ Nesse capítulo serão expostos os requisitos funcionais, não-funcionais e regr
 
 \section{Requisitos Funcionais}
 
+Durante nossa análise, decidimos que esses seriam os principais requisitos funcionais do nosso projeto:
+
+\begin{itemize}
+	\item Realizar o gerenciamento de vagas entre os candidatos e as empresas de uma forma simplificada;
+	\item Recomendar vagas para estudantes, empresas para estudantes, estudantes para vagas/empresas;
+	\item Manter um histórico de vagas aplicadas pelo estudante;
+	\item Manter um histórico de candidatos aplicados a vaga;
+	\item Exibir uma linha do tempo da situação da vaga;
+	\item Alertar os estudantes aplicados à vaga sobre cada mudança em seu status;
+	\item Possibilitar o gerenciamento da vaga pela empresa que a registrou/publicou;
+	\item Possibilitar que a empresa possas acionar (entrar em contato) com os estudantes recomendados/aplicados à vaga;
+	\item Possibilitar que a empresa realize mudanças no status da vaga;
+	\item Possibilitar que o estudante realize um \emph{feedback} da empresa pós-entrevista, que será visto por outros estudantes.
+	\item Não permitir o registro de vagas cujas horas de atividades ultrapassem a carga horária prevista por lei de acordo com a situação escolar de cada estudante.
+\end{itemize}
+
 \section{Requisitos Não-funcionais}
 
+Os requisitos não-funcionais do nosso projeto estão listados abaixo:
+
+\subsection{Requisitos de produtos}
+
+\begin{itemize}
+	\item Ser fácil de aprender a usar;
+	\item Estar disponível 24 horas por dia, 7 dias por semana;
+	\item Ter alta escalabilidade;
+	\item Ser fácil de reparar erros;
+	\item Tempo para carregar os dados necessários menor do que 15 segundos;
+	\item Ter uma taxa de falhas menor que 3/1000;
+\end{itemize}
+
+\subsection{Requisitos externos}
+
+\begin{itemize}
+	\item O sistema deve estar de acordo com a \ac{lgpd}.
+\end{itemize}
+
 \section{Regras de Negócio}
+\begin{itemize}
+	\item As vagas registradas pelas empresas para estudantes de educação especial e dos anos finais do ensino fundamental [...] não podem exigir mais de 4horas diárias/20 horas semanais de dedicação para as atividades e no caso de estudantes do ensino superior [...], 6 horas diárias/30 horas semanais, de acordo com a LEI Nº 11.788, DE  25 DE SETEMBRO DE 2008.
+\end{itemize}
+
