@@ -6,55 +6,48 @@ Nesse capítulo serão expostos os requisitos funcionais, não-funcionais e regr
 
 Durante nossa análise, decidimos que esses seriam os principais requisitos funcionais do nosso projeto:
 
-\begin{itemize}
-	\item Realizar o gerenciamento de vagas entre os candidatos e as empresas de uma forma simplificada;
-	\item Recomendar vagas para estudantes, empresas para estudantes, estudantes para vagas/empresas;
-	\item Manter um histórico de vagas aplicadas pelo estudante;
-	\item Manter um histórico de candidatos aplicados a vaga;
-	\item Exibir uma linha do tempo da situação da vaga;
-	\item Alertar os estudantes aplicados à vaga sobre cada mudança em seu status;
-	\item Possibilitar que a empresa possas acionar (entrar em contato) com os estudantes recomendados/aplicados à vaga;
-	\item Possibilitar que a empresa realize mudanças no status da vaga;
-	\item Possibilitar que o estudante realize um \emph{feedback} da empresa pós-entrevista, que será visto por outros estudantes;
-	\item Não permitir o registro de vagas cujas horas de atividades ultrapassem a carga horária prevista por lei de acordo com a situação escolar de cada estudante.
-\end{itemize}
+\begin{table}[]
+	\begin{tabular}{ll}
+		\multicolumn{1}{c}{\textbf{Código}} & \multicolumn{1}{c}{\textbf{Descrição}}                                                                                                 \\
+		RF-001          & Realizar o gerenciamento de vagas entre os candidatos e as empresas de uma forma simplificada                                                              \\
+		RF-002          & Recomendar vagas para estudantes, empresas para estudantes, estudantes para vagas/empresas                                                                 \\
+		RF-003          & Manter um histórico de vagas tanto para o candidato, quanto para a empresa                                                                                 \\
+		RF-004          & Exibir uma linha do tempo do andamento da vaga                                                                                                             \\
+		RF-005          & Alertar os estudantes aplicados à vaga sobre cada mudança em seu processo                                                                                  \\
+		RF-006          & Possibilitar que a empresa possa entrar em contato com os estudantes recomendados/aplicados à vaga                                                         \\
+		RF-007          & Possibilitar que a empresa realize mudanças no status de andamento da vaga                                                                                 \\
+		RF-008          & Possibilitar que o estudante realize um feedback da empresa pós-entrevista, que será visto por outros estudantes                                           \\
+		RF-009          & Não permitir o registro de vagas cujas horas de atividades ultrapassem a carga horária prevista por lei de acordo com a situação escolar de cada estudante
+	\end{tabular}
+\end{table}
 
 \section{Requisitos Não-funcionais}
 
 Os requisitos não-funcionais do nosso projeto estão listados abaixo:
 
-\subsection{Requisitos de produtos}
-
-\begin{itemize}
-	\item Ser fácil de aprender a usar;
-	\item Estar disponível 24 horas por dia, 7 dias por semana;
-	\item Ter alta escalabilidade;
-	\item Ser fácil de reparar erros;
-	\item Tempo para carregar os dados necessários menor do que 15 segundos;
-	\item Ter uma taxa de falhas menor que 3/1000.
-\end{itemize}
-
-\subsection{Requisitos externos}
-
-\begin{itemize}
-	\item O sistema deve estar de acordo com a \ac{lgpd};
-	\item As vagas registradas pelas empresas para estudantes de educação especial e dos anos finais do ensino fundamental, na modalidade profissional de educação de jovens e adultos, não podem exigir mais de 4horas diárias/20 horas semanais de dedicação para as atividades e no caso de estudantes do ensino superior, da educação profissional de nível médio e do ensino médio regular, 6 horas diárias/30 horas semanais, de acordo com a lei Nº 11.788, de  25 de setembro de 2008.
-	%Art. 10.  A jornada de atividade em estágio será definida de comum acordo entre a instituição de ensino, a parte concedente e o aluno estagiário ou seu representante legal, devendo constar do termo de compromisso ser compatível com as atividades escolares e não ultrapassar: 
-	%I – 4 (quatro) horas diárias e 20 (vinte) horas semanais, no caso de estudantes de educação especial e dos anos finais do ensino fundamental, na modalidade profissional de educação de jovens e adultos; 
-	%II – 6 (seis) horas diárias e 30 (trinta) horas semanais, no caso de estudantes do ensino superior, da educação profissional de nível médio e do ensino médio regular.
-\end{itemize}
-
-\subsection{Requisitos de portabilidade}
-
-\begin{itemize}
-	\item O sistema deve ser responsivo aos diferentes dispositivos que os usuários podem utilizar para acessá-lo.
-\end{itemize}
+\begin{table}[]
+	\begin{tabular}{ll}
+		\multicolumn{1}{c}{\textbf{Código}} & \multicolumn{1}{c}{\textbf{Descrição}} \\
+		RNF-001                             & O sistema deve oferecer boa usabilidade (Ser fácil de aprender a usar)                                                                 \\
+		RNF-002                             & O sistema deve estar disponível 24 horas por dia, 7 dias por semana                                                                    \\
+		RNF-003                             & O sistema deve possuir possibilidade de escalabilidade                                                                                 \\
+		RNF-004                             & Tempo para o carregamento que satisfaça as expectativas do cliente                                                                     \\
+		RNF-005                             & O sistema deve possuir uma taxa de ocorrência de falhas menor que 0.3\%                                                                \\
+		RNF-006                             & O sistema deve estar de acordo com a Lei Geral de Proteção de Dados                                                                    \\
+		RNF-007                             & O sistema deve estar de acordo com a lei Nº 11.788, de 25 de setembro de 2008, regulando a carga horária do estágio                    \\
+		RNF-008                             & O sistema deve ser responsivo aos diferentes dispositivos que os usuários podem utilizar para acessá-lo                                      
+	\end{tabular}
+\end{table}
 
 \section{Regras de Negócio}
-\begin{itemize}
-	\item As vagas devem ser coerentes de acordo com as expectativas dos estudantes;
-	\item Estabelecer uma conexão entre estudantes e empresas de forma justa;
-	\item Manter o processo de candidatura às vagas mais transparente;
-	\item Possibilitar o gerenciamento da vaga pela empresa que a registrou/publicou.
-\end{itemize}
+\begin{table}[]
+	\begin{tabular}{lll}
+		\multicolumn{1}{c}{\textbf{Código}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Requisito Relacionado}} \\
+		RN-001\%                            & As vagas a serem cadastradas devem estar coerentes com o perfil buscado &  RF-001                                                  \\
+		RN-002                              & Os históricos das vagas devem ser mantido por todo o período            &  RF-003                                                  \\
+		RN-003                              & A empresa é responsável pelo encaminhamento do status da vaga           &  RF-007                                                  \\
+		RN-004                              & Para o candidato enviar um feedback, ele deve ter pelo menos iniciado o processo seletivo & RF-008                                 \\
+		RN-005                              & O feedback pode ser feito de forma anônima, mas o usuário deve estar logado e ter passado pelo processo seletivo & RF-008            
+	\end{tabular}
+\end{table}
 
