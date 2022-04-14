@@ -6,48 +6,80 @@ Nesse capítulo serão expostos os requisitos funcionais, não-funcionais e regr
 
 Durante nossa análise, decidimos que esses seriam os principais requisitos funcionais do nosso projeto:
 
-\begin{table}[]
-	\begin{tabular}{ll}
-		\multicolumn{1}{c}{\textbf{Código}} & \multicolumn{1}{c}{\textbf{Descrição}}                                                                                                 \\
-		RF-001          & Realizar o gerenciamento de vagas entre os candidatos e as empresas de uma forma simplificada                                                              \\
-		RF-002          & Recomendar vagas para estudantes, empresas para estudantes, estudantes para vagas/empresas                                                                 \\
-		RF-003          & Manter um histórico de vagas tanto para o candidato, quanto para a empresa                                                                                 \\
-		RF-004          & Exibir uma linha do tempo do andamento da vaga                                                                                                             \\
-		RF-005          & Alertar os estudantes aplicados à vaga sobre cada mudança em seu processo                                                                                  \\
-		RF-006          & Possibilitar que a empresa possa entrar em contato com os estudantes recomendados/aplicados à vaga                                                         \\
-		RF-007          & Possibilitar que a empresa realize mudanças no status de andamento da vaga                                                                                 \\
-		RF-008          & Possibilitar que o estudante realize um feedback da empresa pós-entrevista, que será visto por outros estudantes                                           \\
-		RF-009          & Não permitir o registro de vagas cujas horas de atividades ultrapassem a carga horária prevista por lei de acordo com a situação escolar de cada estudante
-	\end{tabular}
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Código}} &
+      \multicolumn{1}{c|}{\textbf{Descrição}} \\ \hline
+    RF-001 &
+      \begin{tabular}[c]{@{}l@{}}Realizar o gerenciamento de vagas entre os candidatos e as empresas de \\ uma forma simplificada\end{tabular} \\ \hline
+    RF-002 &
+      \begin{tabular}[c]{@{}l@{}}Recomendar vagas para estudantes, empresas para estudantes, estudantes \\ para vagas/empresas\end{tabular} \\ \hline
+    RF-003 &
+      Manter um histórico de vagas tanto para o candidato, quanto para a empresa \\ \hline
+    RF-004 &
+      Exibir uma linha do tempo do andamento da vaga \\ \hline
+    RF-005 &
+      Alertar os estudantes aplicados à vaga sobre cada mudança em seu processo \\ \hline
+    RF-006 &
+      \begin{tabular}[c]{@{}l@{}}Possibilitar que a empresa possa entrar em contato com os estudantes \\ recomendados/aplicados à vaga\end{tabular} \\ \hline
+    RF-007 &
+      Possibilitar que a empresa realize mudanças no status de andamento da vaga \\ \hline
+    RF-008 &
+      \begin{tabular}[c]{@{}l@{}}Possibilitar que o estudante realize um feedback da empresa pós-entrevista, \\ que será visto por outros estudantes\end{tabular} \\ \hline
+    RF-009 &
+      \begin{tabular}[c]{@{}l@{}}Não permitir o registro de vagas cujas horas de atividades ultrapassem \\ a carga horária prevista por lei de acordo com a situação escolar de cada estudante\end{tabular} \\ \hline
+    \end{tabular}
 \end{table}
 
 \section{Requisitos Não-funcionais}
 
 Os requisitos não-funcionais do nosso projeto estão listados abaixo:
-
-\begin{table}[]
-	\begin{tabular}{ll}
-		\multicolumn{1}{c}{\textbf{Código}} & \multicolumn{1}{c}{\textbf{Descrição}} \\
-		RNF-001                             & O sistema deve oferecer boa usabilidade (Ser fácil de aprender a usar)                                                                 \\
-		RNF-002                             & O sistema deve estar disponível 24 horas por dia, 7 dias por semana                                                                    \\
-		RNF-003                             & O sistema deve possuir possibilidade de escalabilidade                                                                                 \\
-		RNF-004                             & Tempo para o carregamento que satisfaça as expectativas do cliente                                                                     \\
-		RNF-005                             & O sistema deve possuir uma taxa de ocorrência de falhas menor que 0.3\%                                                                \\
-		RNF-006                             & O sistema deve estar de acordo com a Lei Geral de Proteção de Dados                                                                    \\
-		RNF-007                             & O sistema deve estar de acordo com a lei Nº 11.788, de 25 de setembro de 2008, regulando a carga horária do estágio                    \\
-		RNF-008                             & O sistema deve ser responsivo aos diferentes dispositivos que os usuários podem utilizar para acessá-lo                                      
-	\end{tabular}
+\\
+\\
+\\
+\\
+\\
+\\
+\begin{table}[h]
+    \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Código}} & \multicolumn{1}{c|}{\textbf{Descrição}}                                 \\ \hline
+    RNF-001                               & O sistema deve oferecer boa usabilidade (Ser fácil de aprender a usar)  \\ \hline
+    RNF-002                               & O sistema deve estar disponível 24 horas por dia, 7 dias por semana     \\ \hline
+    RNF-003                               & O sistema deve possuir possibilidade de escalabilidade                  \\ \hline
+    RNF-004                               & Tempo para o carregamento que satisfaça as expectativas do cliente      \\ \hline
+    RNF-005                               & O sistema deve possuir uma taxa de ocorrência de falhas menor que 0.3\% \\ \hline
+    RNF-006                               & O sistema deve estar de acordo com a Lei Geral de Proteção de Dados     \\ \hline
+    RNF-007 & \begin{tabular}[c]{@{}l@{}}O sistema deve estar de acordo com a lei Nº 11.788, de 25 de setembro de 2008, \\ regulando a carga horária do estágio\end{tabular} \\ \hline
+    RNF-008 & \begin{tabular}[c]{@{}l@{}}O sistema deve ser responsivo aos diferentes dispositivos que os usuários \\ podem utilizar para acessá-lo\end{tabular}             \\ \hline
+    \end{tabular}
 \end{table}
-
+\\
 \section{Regras de Negócio}
-\begin{table}[]
-	\begin{tabular}{lll}
-		\multicolumn{1}{c}{\textbf{Código}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Requisito Relacionado}} \\
-		RN-001\%                            & As vagas a serem cadastradas devem estar coerentes com o perfil buscado &  RF-001                                                  \\
-		RN-002                              & Os históricos das vagas devem ser mantido por todo o período            &  RF-003                                                  \\
-		RN-003                              & A empresa é responsável pelo encaminhamento do status da vaga           &  RF-007                                                  \\
-		RN-004                              & Para o candidato enviar um feedback, ele deve ter pelo menos iniciado o processo seletivo & RF-008                                 \\
-		RN-005                              & O feedback pode ser feito de forma anônima, mas o usuário deve estar logado e ter passado pelo processo seletivo & RF-008            
-	\end{tabular}
-\end{table}
+As regras de negócio do nosso projeto estão listados abaixo:
 
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Código}} &
+      \multicolumn{1}{c|}{\textbf{Descrição}} &
+      \multicolumn{1}{c|}{\textbf{Requisito Relacionado}} \\ \hline
+    RN-001 &
+      \begin{tabular}[c]{@{}l@{}}As vagas a serem cadastradas devem estar \\ coerentes com o perfil buscado\end{tabular} &
+      RF-001 \\ \hline
+    RN-002 &
+      \begin{tabular}[c]{@{}l@{}}Os históricos das vagas devem ser mantido \\ por todo o período\end{tabular} &
+      RF-003 \\ \hline
+    RN-003 &
+      \begin{tabular}[c]{@{}l@{}}A empresa é responsável pelo encaminhamento \\ do status da vaga\end{tabular} &
+      RF-007 \\ \hline
+    RN-004 &
+      \begin{tabular}[c]{@{}l@{}}Para o candidato enviar um feedback, ele deve \\ ter pelo menos iniciado o processo seletivo\end{tabular} &
+      RF-008 \\ \hline
+    RN-005 &
+      \begin{tabular}[c]{@{}l@{}}O feedback pode ser feito de forma anônima, mas o \\ usuário deve estar logado e ter passado pelo processo \\ seletivo\end{tabular} &
+      RF-008 \\ \hline
+    \end{tabular}
+\end{table}
