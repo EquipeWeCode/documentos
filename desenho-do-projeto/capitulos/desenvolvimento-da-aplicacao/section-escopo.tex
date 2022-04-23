@@ -2,6 +2,12 @@
 % ESCOPO
 % ----------------------------------------------------------
 \section{Escopo}
+
+Neste tópico abordaremos os casos de uso da aplicação (forma de descrever uma
+funcionalidade do sistema); diagrama de requisitos (identifica as funcionalidades a serem
+implementadas); histórias de usuário (descrição da necessidade do usuário); \emph{product
+backlog} (lista de tarefas que temos a cumprir); e definição de entregas (quais funcionalidades estarão
+disponíveis nas principais entregas).
 % ----------------------------------------------------------
 % REQUISITOS
 % ----------------------------------------------------------
@@ -26,7 +32,7 @@ Durante nossa análise, decidimos que esses seriam os principais requisitos func
     \multicolumn{1}{|c|}{\textbf{Código}} &
       \multicolumn{1}{c|}{\textbf{Descrição}} \\ \hline
     RF-001 &
-      \begin{tabular}[c]{@{}l@{}}Realizar o gerenciamento de vagas entre os candidatos e as empresas de \\ uma forma simplificada\end{tabular} \\ \hline
+      \begin{tabular}[c]{@{}l@{}}Permitir a busca de vagas por filtros\end{tabular} \\ \hline
     RF-002 &
       \begin{tabular}[c]{@{}l@{}}Recomendar vagas para estudantes, empresas para estudantes, estudantes \\ para vagas/empresas\end{tabular} \\ \hline
     RF-003 &
@@ -43,6 +49,8 @@ Durante nossa análise, decidimos que esses seriam os principais requisitos func
       \begin{tabular}[c]{@{}l@{}}Possibilitar que o estudante realize um feedback da empresa pós-entrevista, \\ que será visto por outros estudantes\end{tabular} \\ \hline
     RF-009 &
       \begin{tabular}[c]{@{}l@{}}Não permitir o registro de vagas cujas horas de atividades ultrapassem \\ a carga horária prevista por lei de acordo com a situação escolar de cada estudante\end{tabular} \\ \hline
+    RF-010 &
+    \begin{tabular}[c]{@{}l@{}}Permitir o cadastro de vagas por parte da empresa, seguindo as regras estabelecidas\end{tabular} \\ \hline
     \end{tabular}
     \fonte{Os Autores}
 \end{quadro}
@@ -91,7 +99,7 @@ As regras de negócio do nosso projeto estão listados abaixo:
       \multicolumn{1}{c|}{\textbf{Requisito Relacionado}} \\ \hline
     RN-001 &
       \begin{tabular}[c]{@{}l@{}}As vagas a serem cadastradas devem estar \\ coerentes com o perfil buscado\end{tabular} &
-      RF-001 \\ \hline
+      RF-010 \\ \hline
     RN-002 &
       \begin{tabular}[c]{@{}l@{}}Os históricos das vagas devem ser mantido \\ por todo o período\end{tabular} &
       RF-003 \\ \hline
@@ -99,11 +107,31 @@ As regras de negócio do nosso projeto estão listados abaixo:
       \begin{tabular}[c]{@{}l@{}}A empresa é responsável pelo encaminhamento \\ do status da vaga\end{tabular} &
       RF-007 \\ \hline
     RN-004 &
-      \begin{tabular}[c]{@{}l@{}}Para o candidato enviar um feedback, ele deve \\ ter pelo menos iniciado o processo seletivo\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}Para o candidato enviar um \emph{feedback}, ele deve \\ ter pelo menos iniciado o processo seletivo\end{tabular} &
       RF-008 \\ \hline
     RN-005 &
-      \begin{tabular}[c]{@{}l@{}}O feedback pode ser feito de forma anônima, mas o \\ usuário deve estar logado e ter passado pelo processo \\ seletivo\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}O \emph{feedback} pode ser feito de forma anônima, mas o \\ usuário deve estar logado e ter passado pelo processo \\ seletivo\end{tabular} &
       RF-008 \\ \hline
     \end{tabular}
     \fonte{Os Autores}
 \end{quadro}
+
+\subsection{Casos de uso}
+
+Casos de usos que são pertinentes à nossa aplicação.
+\begin{figure}[H]
+	\centering 
+	\caption{\label{fig:caso1}Caso de Uso 1 - Sistema de busca e cadastro de vagas}
+	%\includesvg[inkscapelatex=false,width=0.6\textwidth]{imagens/caso-de-uso-1.svg}
+	\includegraphics[width=0.8\textwidth]{imagens/caso-de-uso-1.png} 
+	\fonte{Os autores}
+\end{figure}
+
+\begin{figure}[H]
+	\centering 
+	\caption{\label{fig:caso1}Caso de Uso 2 - Funcionalidades do administrador}
+	%\includesvg[inkscapelatex=false,width=0.6\textwidth]{imagens/caso-de-uso-1.svg}
+	\includegraphics[width=0.8\textwidth]{imagens/caso-de-uso-2.png} 
+	\fonte{Os autores}
+\end{figure}
+
