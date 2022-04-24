@@ -46,7 +46,7 @@ Durante nossa análise, decidimos que esses seriam os principais requisitos func
     RF-007 &
       Possibilitar que a empresa realize mudanças no status de andamento da vaga \\ \hline
     RF-008 &
-      \begin{tabular}[c]{@{}l@{}}Possibilitar que o estudante realize um feedback da empresa pós-entrevista, \\ que será visto por outros estudantes\end{tabular} \\ \hline
+      \begin{tabular}[c]{@{}l@{}}Possibilitar que o estudante realize um \emph{feedback} da empresa pós-entrevista, \\ que será visto por outros estudantes\end{tabular} \\ \hline
     RF-009 &
       \begin{tabular}[c]{@{}l@{}}Não permitir o registro de vagas cujas horas de atividades ultrapassem \\ a carga horária prevista por lei de acordo com a situação escolar de cada estudante\end{tabular} \\ \hline
     RF-010 &
@@ -74,7 +74,7 @@ Os requisitos não-funcionais do nosso projeto estão listados abaixo:
     RNF-003                               & O sistema deve possuir possibilidade de escalabilidade                  \\ \hline
     RNF-004                               & Tempo para o carregamento que satisfaça as expectativas do cliente      \\ \hline
     RNF-005                               & O sistema deve possuir uma taxa de ocorrência de falhas menor que 0.3\% \\ \hline
-    RNF-006                               & O sistema deve estar de acordo com a Lei Geral de Proteção de Dados     \\ \hline
+    RNF-006                               & O sistema deve estar de acordo com a \ac{lgpd}                          \\ \hline
     RNF-007 & \begin{tabular}[c]{@{}l@{}}O sistema deve estar de acordo com a lei Nº 11.788, de 25 de setembro de 2008, \\ regulando a carga horária do estágio\end{tabular} \\ \hline
     RNF-008 & \begin{tabular}[c]{@{}l@{}}O sistema deve ser responsivo aos diferentes dispositivos que os usuários \\ podem utilizar para acessá-lo\end{tabular}             \\ \hline
     \end{tabular}
@@ -121,7 +121,7 @@ As regras de negócio do nosso projeto estão listados abaixo:
 Casos de usos que são pertinentes à nossa aplicação.
 \begin{figure}[H]
 	\centering 
-	\caption{\label{fig:caso1}Caso de Uso 1 - Sistema de busca e cadastro de vagas}
+	\caption{\label{fig:caso1}Caso de Uso 1 - Funcionalidades do estudante}
 	%\includesvg[inkscapelatex=false,width=0.6\textwidth]{imagens/caso-de-uso-1.svg}
 	\includegraphics[width=0.8\textwidth]{imagens/caso-de-uso-1.png} 
 	\fonte{Os autores}
@@ -129,9 +129,31 @@ Casos de usos que são pertinentes à nossa aplicação.
 
 \begin{figure}[H]
 	\centering 
-	\caption{\label{fig:caso1}Caso de Uso 2 - Funcionalidades do administrador}
-	%\includesvg[inkscapelatex=false,width=0.6\textwidth]{imagens/caso-de-uso-1.svg}
+	\caption{\label{fig:caso2}Caso de Uso 2 - Funcionalidades da empresa}
+	%\includesvg[inkscapelatex=false,width=0.6\textwidth]{imagens/caso-de-uso-2.svg}
 	\includegraphics[width=0.8\textwidth]{imagens/caso-de-uso-2.png} 
 	\fonte{Os autores}
 \end{figure}
 
+\begin{figure}[H]
+	\centering 
+	\caption{\label{fig:caso3}Caso de Uso 3 - Funcionalidades do administrador}
+	%\includesvg[inkscapelatex=false,width=0.6\textwidth]{imagens/caso-de-uso-3.svg}
+	\includegraphics[width=0.8\textwidth]{imagens/caso-de-uso-3.png} 
+	\fonte{Os autores}
+\end{figure}
+
+\subsection{Fases de entrega}
+
+Nessa seção, iremos expor quais funcionalidades do sistemas pretendemos entregar nas principais fases de entrega.
+
+\subsubsection{Prova de Conceito}
+
+Na fase da prova de conceito, pretendemos entregar as funcionalidades mais básicas do nosso software. Dentre elas, o cadastro de estudantes via \ac{sso} da Google, onde é explicado o processo no site possibilitando a criação de uma conta com informações básicas, necessárias apenas para o funcionamento padrão do sistema, e o cadastro de empresas, que será feito no próprio \emph{website}, onde a empresa preenche as informações e passa por uma aprovação nossa. Além disso, o software permitirá o login desses usuários já cadastrados, onde poderão consultar suas informações básicas.
+
+Ao cadastrar no sistema, a empresa também poderá registrar uma pessoa do \ac{rh} que será responsável por gerenciar as vagas daquela organização, e essa pessoa poderá criar novas vagas com informações básicas, apenas para serem visíveis na tela de consulta de vagas.
+Na parte do estudante, será possível para ele, consultar as vagas que existem no sistema através de filtros básicos.
+
+\subsubsection{Produto Mínimo Viável (MVP)}
+
+Na entrega do \ac{mvp}, pretendemos incrementar o que já foi desenvolvido durante a prova de conceito com funcionalidades importantes ao nosso sistema, como a candidatura do estudante à uma vaga, a possibilidade do estudante denunciar uma vaga por não ser coerente com a proposta da nossa aplicação, que é ser um \emph{website} que possua vagas de estágios coerentes com a realidade de um estagiário, funcionalidade de login via \gls{linkedin} para os estudantes, recomendações de vagas para os candidatos e recomendação de candidatos para empresas
