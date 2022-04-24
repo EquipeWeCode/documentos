@@ -1,0 +1,23 @@
+% ----------------------------------------------------------
+% ARQUITETURA
+% ----------------------------------------------------------
+\section{Segurança, Privacidade e Legislação}
+Para o desenvolvimento de nossa aplicação, temos que levar em consideração  alguns aspectos de segurança, privacidade e legislação.
+A lei brasileira que diz respeito a como lidar com dados de pessoas em plataformas digitais (sobretudo em aplicações disponíveis na internet) é a Nº 13.709 \cite{lgpd},
+que está em vigor desde 2020, a \gls{lgpd}.
+
+De acordo com o estabelecido na \gls{lgpd}, nossa aplicação irá, se necessário, recuperar o mínimo de dados possíveis do usuário para prosseguir com a sua utilização, como e-mail, nome
+e informações sobre a instituição de ensino do usuário por parte do candidato e o CNPJ da empresa por parte da empresa que irá cadastrar as vagas. Sempre que necessário a obtenção de tais informações
+por parte do sistema, o usuário será alertado de tal ocorrência.
+
+Também podemos levar em consideração algumas outras questões fundamentais de segurança enquanto se dá o desenvolvimento da aplicação, visto que utilizaremos no back-end uma API para a transferência de 
+dados e comunicação com o nosso front-end:
+\begin{itemize}
+	\item Autenticação e Autorização: As requisições apenas serão aceitas se o usuário estiver autenticado no sistema e os \textit{endpoints} funcionarão de acordo com a autorização baseada em papeis;
+	\item Criptografia: Seguiremos o protocolo e padrão \gls{https} para a transferência de mensagens entre o back-end e o front-end, de modo a ficarem encriptadas e garantir maior segurança na aplicação;
+	\item Não exposição de dados sensíveis à aplicação: Durante o desenvolvimento da aplicação, senhas para comunicação com serviços externos e outras ferramentas não ficarão expostas em código, e sim passados
+	através de variáveis de ambiente de modo a não expor chaves e/ou senhas importantes.
+	\item Política de senhas: nunca iremos armazenar as senhas dos usuários diretamente no banco de dados, teremos um algoritmo gerando um \textit{hash} e fazendo a sua comparação no momento da autenticação.
+	Também será crucial impor uma política de segurança que obriga os usuários a informarem uma senha com mais de 8 dígitos, contendo letras e números, pelo menos uma letra maiúscula e um caractere especial.
+	Dessa forma, o fator humano da segurança de nossa aplicação é levemente reforçado.
+\end{itemize}
