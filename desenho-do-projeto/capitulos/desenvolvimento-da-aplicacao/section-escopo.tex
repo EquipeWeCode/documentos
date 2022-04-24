@@ -4,10 +4,7 @@
 \section{Escopo}
 
 Neste tópico abordaremos os casos de uso da aplicação (forma de descrever uma
-funcionalidade do sistema); diagrama de requisitos (identifica as funcionalidades a serem
-implementadas); histórias de usuário (descrição da necessidade do usuário); \emph{product
-backlog} (lista de tarefas que temos a cumprir); e definição de entregas (quais funcionalidades estarão
-disponíveis nas principais entregas).
+funcionalidade do sistema); diagrama de requisitos (identifica as funcionalidades a serem implementadas); histórias de usuário (descrição da necessidade do usuário); e definição de entregas (quais funcionalidades estarão disponíveis nas principais entregas).
 % ----------------------------------------------------------
 % REQUISITOS
 % ----------------------------------------------------------
@@ -152,8 +149,14 @@ Nessa seção, iremos expor quais funcionalidades do sistemas pretendemos entreg
 Na fase da prova de conceito, pretendemos entregar as funcionalidades mais básicas do nosso software. Dentre elas, o cadastro de estudantes via \ac{sso} da Google, onde é explicado o processo no site possibilitando a criação de uma conta com informações básicas, necessárias apenas para o funcionamento padrão do sistema, e o cadastro de empresas, que será feito no próprio \emph{website}, onde a empresa preenche as informações e passa por uma aprovação nossa. Além disso, o software permitirá o login desses usuários já cadastrados, onde poderão consultar suas informações básicas.
 
 Ao cadastrar no sistema, a empresa também poderá registrar uma pessoa do \ac{rh} que será responsável por gerenciar as vagas daquela organização, e essa pessoa poderá criar novas vagas com informações básicas, apenas para serem visíveis na tela de consulta de vagas.
-Na parte do estudante, será possível para ele, consultar as vagas que existem no sistema através de filtros básicos.
+Na parte do estudante, será possível para ele, consultar as vagas que existem no sistema através de filtros básicos e internacionalização de linguagem.
 
 \subsubsection{Produto Mínimo Viável (MVP)}
 
-Na entrega do \ac{mvp}, pretendemos incrementar o que já foi desenvolvido durante a prova de conceito com funcionalidades importantes ao nosso sistema, como a candidatura do estudante à uma vaga, a possibilidade do estudante denunciar uma vaga por não ser coerente com a proposta da nossa aplicação, que é ser um \emph{website} que possua vagas de estágios coerentes com a realidade de um estagiário, funcionalidade de login via \gls{linkedin} para os estudantes, recomendações de vagas para os candidatos e recomendação de candidatos para empresas
+Na entrega do \ac{mvp}, pretendemos incrementar o que já foi desenvolvido durante a prova de conceito com funcionalidades importantes ao nosso sistema, como a candidatura do estudante à uma vaga, a possibilidade do estudante denunciar uma vaga por não ser coerente com a proposta da nossa aplicação, que é ser um \emph{website} que possua vagas de estágios coerentes com a realidade de um estagiário, funcionalidade de login via \gls{linkedin} para os estudantes, recomendações de vagas para os candidatos e recomendação de candidatos para empresas. Além disso, serão feitos os teste unitários e testes de qualidade de software, a fim de garantir que a aplicação esteja em conforme com os requisitos solicitados.
+
+\subsubsection{Entrega Final}
+
+Na entrega final, iremos acrescer nosso projeto com o restante das funcionalidades, tais como o \emph{dashboard} de vagas para a empresa, histórico de vagas para os estudantes, mudança de status das vagas por parte da empresa, \emph{feedback} de empresas após o processo seletivo e utilização de mais campos do banco de dados para termos mais detalhes de vagas, usuários, etc.
+
+Além disso, requisitos não funcionais, como a refatoração do código, a fim de deixá-lo mais limpo e performático, e mais testes de qualidade de software, agora com um banco de dados com mais registros, para manter o mesmo nível de performance e usabilidade que tinha antes, com poucos registros.
