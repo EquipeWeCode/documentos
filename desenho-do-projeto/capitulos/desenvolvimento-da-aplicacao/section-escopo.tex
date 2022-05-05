@@ -3,22 +3,20 @@
 % ----------------------------------------------------------
 \section{Escopo}
 
-Neste tópico abordaremos os casos de uso da aplicação (forma de descrever uma
-funcionalidade do sistema); diagrama de requisitos (identifica as funcionalidades a serem implementadas); histórias de usuário (descrição da necessidade do usuário); e definição de entregas (quais funcionalidades estarão disponíveis nas principais entregas).
+Neste tópico abordaremos os casos de uso da aplicação (forma de descrever uma funcionalidade do sistema); diagrama de requisitos (identificação das funcionalidades a serem implementadas); histórias de usuário (descrição das necessidades do usuário); e definição de entregas (quais funcionalidades estarão disponíveis nas principais entregas).
 % ----------------------------------------------------------
 % REQUISITOS
 % ----------------------------------------------------------
 \subsection{Requisitos}
 
-Para o futuro desenvolvimento da aplicação, serão expostos os requisitos funcionais, não-funcionais e regras de negócio que nossa aplicação terá, tais requisitos foram formados a partir de estudos de como irá funcionar os processos de nosso \emph{website}.
+Para o desenvolvimento da aplicação \emph{estagiei}, serão expostos os requisitos funcionais, não-funcionais e regras de negócio que nossa aplicação terá, tais requisitos foram formados a partir de estudos de como irão funcionar os processos de nosso \emph{website}.
 
 % ----------------------------------------------------------
 % REQUISITOS FUNCIONAIS
 % ----------------------------------------------------------
 \subsubsection{Requisitos Funcionais}
 
-Os requisitos funcionais dizem respeito às principais funcionalidades que o sistema deve empenhar \cite{sommerville}. Durante nossa análise, foram decididos os principais requisitos funcionais da aplicação como descrito
-no \autoref{req-fun}:
+Os requisitos funcionais dizem respeito às principais funcionalidades que o sistema deve empenhar \cite{sommerville}. Durante nossa análise, foram decididos os principais requisitos funcionais da aplicação como descrito no \autoref{req-fun}:
 
 \begin{quadro}[H]
 \ABNTEXfontereduzida
@@ -58,13 +56,12 @@ no \autoref{req-fun}:
 % ----------------------------------------------------------
 \subsubsection{Requisitos Não-funcionais}
 
-Ao contrário dos requisitos funcionais, os requisitos não funcionais não estão ligados às principais funcionalidades de um sistema, mas sim com seus fatores de restrições e especificações. É a partir deles que observamos
-aspectos como desempenho, usabilidade, segurança, e outros aspectos não funcionais que tangem o sistema \cite{sommerville}.
-Tendo isto em mente, no \autoref{req-nao-fun} são elencados os principais requisitos não funcionais. 
+Ao contrário dos requisitos funcionais, os requisitos não-funcionais não estão ligados às principais funcionalidades de um sistema, mas sim com seus fatores de restrições e especificações. É a partir deles que observamos aspectos como desempenho, usabilidade, segurança e outros aspectos não-funcionais que tangem o sistema \cite{sommerville}.
+Tendo isto em mente, no \autoref{req-nao-fun} são elencados os principais requisitos não-funcionais. 
 \begin{quadro}[H]
 \centering
 \ABNTEXfontereduzida
-\caption[Requisitos não funcionais]{Requisitos não funcionais}
+\caption[Requisitos não funcionais]{Requisitos não-funcionais}
     \begin{tabular}{|l|l|}
     \hline
     \multicolumn{1}{|c|}{\textbf{Código}} & \multicolumn{1}{c|}{\textbf{Descrição}}                                 \\ \hline
@@ -85,7 +82,7 @@ Tendo isto em mente, no \autoref{req-nao-fun} são elencados os principais requi
 % REGRAS DE NEGÓCIO
 % ----------------------------------------------------------
 \subsubsection{Regras de Negócio}
-As regras de negócio, que estão ligadas aos requisitos funcionais previamente descritos, do nosso projeto estão listados no \autoref{regra-negocio}
+As regras de negócio, que estão ligadas aos requisitos funcionais previamente descritos, do nosso projeto estão listados no \autoref{regra-negocio}.
 
 \begin{quadro}[H]
 \centering
@@ -100,7 +97,7 @@ As regras de negócio, que estão ligadas aos requisitos funcionais previamente 
       \begin{tabular}[c]{@{}l@{}}As vagas a serem cadastradas devem estar \\ coerentes com o perfil buscado\end{tabular} &
       RF-010 \\ \hline
     RN-002 &
-      \begin{tabular}[c]{@{}l@{}}Os históricos das vagas devem ser mantido \\ por todo o período\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}Os históricos das vagas devem ser mantidos \\ por todo o período\end{tabular} &
       RF-003 \\ \hline
     RN-003 &
       \begin{tabular}[c]{@{}l@{}}A empresa é responsável pelo encaminhamento \\ do status da vaga\end{tabular} &
@@ -118,17 +115,9 @@ As regras de negócio, que estão ligadas aos requisitos funcionais previamente 
 
 \subsection{Histórias de usuário}
 
-No quadro abaixo estão demonstradas as histórias de usuário de nossa aplicação.
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\begin{quadro}[thb]
+No \autoref{historias-usuario} estão demonstradas as histórias de usuário de nossa aplicação.
+
+\begin{quadro}[H]
 	\centering
 	\ABNTEXfontereduzida
 	\caption{Histórias de usuário}
@@ -137,25 +126,25 @@ No quadro abaixo estão demonstradas as histórias de usuário de nossa aplicaç
 	\hline
 	\thead{História} \\
 	\hline
-	 Como candidato eu quero buscar as vagas de acordo com o filtro que eu escolher. \\
+	 Como estudante, eu quero buscar as vagas de acordo com o filtro que eu escolher. \\
 	 \hline
-	 Como empresa eu quero gerenciar a minha vaga para que possa visualizar a quantidade de candidatos dentre outras informações pertinentes. \\
+	 Como empresa, eu quero gerenciar a minha vaga para que possa visualizar a quantidade de candidatos dentre outras informações pertinentes. \\
 	 \hline
-	 Como candidato eu quero receber recomendações de vaga para que a minha pesquisa seja facilitada. \\
+	 Como estudante, eu quero receber recomendações de vaga para que a minha pesquisa seja facilitada. \\
 	 \hline
-	 Como empresa, quero receber recomendações de candidatos para que possa enviar solicitações de candidaturas a vaga. \\
+	 Como empresa, eu quero receber recomendações de estudantes para que possa enviar solicitações de candidaturas a vaga. \\
 	 \hline
-	 Como candidato eu quero um histórico de todas as minhas vagas já aplicadas. \\
+	 Como estudante, eu quero um histórico de todas as minhas vagas já aplicadas. \\
 	 \hline
-	 Como empresa eu quero um histórico dos candidatos aplicados as vagas para que eu possa realizar levantamentos sobre as informações ali contidas. \\
+	 Como empresa, eu quero um histórico dos estudantes candidatos aplicados as vagas para que eu possa realizar levantamentos sobre as informações ali contidas. \\
 	 \hline
-	 Como candidato eu quero uma linha do tempo com os principais passos do processo para que eu possa acompanhar de forma fácil e rápida. \\
+	 Como estudante, eu quero uma linha do tempo com os principais passos do processo para que eu possa acompanhá-lo de forma fácil e rápida. \\
 	 \hline
-	 Como candidato eu quero ser alertado sobre as mudanças no status da vaga para que possa saber de forma rápida as movimentações. \\
+	 Como estudante, eu quero ser alertado sobre as mudanças no status da vaga para que possa saber de forma rápida as movimentações. \\
 	 \hline
-	 Como empresa eu quero me comunicar de forma fácil com os candidatos para que o processo seja mais ágil. \\
+	 Como empresa, eu quero me comunicar de forma fácil com os estudantes candidatos para que o processo seja mais ágil. \\
 	 \hline
-	 Como empresa eu quero ter a possibilidade de alterar os status da vaga para que o gerenciamento fica mais fácil. \\
+	 Como empresa, eu quero ter a possibilidade de alterar o status da vaga para que o gerenciamento seja mais fácil. \\
 	 \hline
 	\end{tabular}
 	\fonte{Os autores}
@@ -163,7 +152,7 @@ No quadro abaixo estão demonstradas as histórias de usuário de nossa aplicaç
 
 \subsection{Casos de uso}
 
-Abaixo estão demonstrados os diagramas de casos de usos que são pertinentes à nossa aplicação.
+Em \autoref{fig:caso1}, \autoref{fig:caso2} e \autoref{fig:caso3} estão demonstrados os diagramas de casos de usos que são pertinentes à nossa aplicação.
 
 \begin{figure}[H]
 	\centering 
@@ -191,21 +180,20 @@ Abaixo estão demonstrados os diagramas de casos de usos que são pertinentes à
 
 \subsection{Fases de entrega}
 
-Nessa seção, iremos expor quais funcionalidades do sistemas pretendemos desenvolver tendo em vista as principais fases de entrega da disciplina, sendo elas a Prova de Conceito, o Produto Mínimo Viável e a Entrega Final.
+Nessa seção, iremos expor quais funcionalidades do sistema pretendemos desenvolver tendo em vista as principais fases de entrega da disciplina, sendo elas a \ac{poc}, o \ac{mvp} e a Entrega Final.
 
-\subsubsection{Prova de Conceito}
+\subsubsection{Prova de Conceito (POC)}
 
-Na fase da prova de conceito, pretendemos entregar as funcionalidades mais básicas do nosso software. Dentre elas, o cadastro de estudantes via \ac{sso} da Google, onde é explicado o processo no site possibilitando a criação de uma conta com informações básicas, necessárias apenas para o funcionamento padrão do sistema, e o cadastro de empresas, que será feito no próprio \emph{website}, onde a empresa preenche as informações e passa por uma aprovação nossa. Além disso, o software permitirá o login desses usuários já cadastrados, onde poderão consultar suas informações básicas.
+Na fase de \ac{poc}, pretendemos entregar as funcionalidades mais básicas do nosso software. Dentre elas, o cadastro de estudantes via \ac{sso} da Google, onde é explicado o processo no site possibilitando a criação de uma conta com informações básicas, necessárias apenas para o funcionamento padrão do sistema, e o cadastro de empresas, que será feito no próprio \emph{website estagiei}, onde a empresa preenche as informações e passa por uma aprovação nossa. Além disso, o software permitirá o login desses usuários já cadastrados, onde poderão consultar suas informações básicas.
 
-Ao cadastrar no sistema, a empresa também poderá registrar uma pessoa do \ac{rh} que será responsável por gerenciar as vagas daquela organização, e essa pessoa poderá criar novas vagas com informações básicas, apenas para serem visíveis na tela de consulta de vagas.
-Na parte do estudante, será possível para ele, consultar as vagas que existem no sistema através de filtros básicos e internacionalização de linguagem.
+Ao se cadastrar no sistema, a empresa também poderá registrar uma pessoa do \ac{rh}, que será responsável por gerenciar as vagas daquela organização, e essa pessoa poderá criar novas vagas com informações básicas, apenas para serem visíveis na tela de consulta de vagas. Na parte do estudante, será possível para ele(a), consultar as vagas que existem no sistema através de filtros básicos e internacionalização de linguagem.
 
 \subsubsection{Produto Mínimo Viável (MVP)}
 
-Na entrega do \ac{mvp}, pretendemos incrementar o que já foi desenvolvido durante a prova de conceito com funcionalidades importantes ao nosso sistema, como a candidatura do estudante à uma vaga, a possibilidade do estudante denunciar uma vaga por não ser coerente com a proposta da nossa aplicação, que é ser um \emph{website} que possua vagas de estágios coerentes com a realidade de um estagiário, funcionalidade de login via \gls{linkedin} para os estudantes, recomendações de vagas para os candidatos, recomendação de candidatos para empresas e opção de contato com o candidato via \emph{Whatsapp}. Além disso, serão feitos os teste unitários e testes de qualidade de software, a fim de garantir que a aplicação esteja em conforme com os requisitos solicitados.
+Na entrega do \ac{mvp}, pretendemos incrementar o que já foi desenvolvido durante a \ac{poc} com funcionalidades importantes ao nosso sistema, como a candidatura do estudante à uma vaga; a possibilidade do estudante denunciar uma vaga por não ser coerente com a proposta da nossa aplicação, que é ser um \emph{website} que possua vagas de estágio coerentes com a realidade de um estagiário; funcionalidade de login via \gls{linkedin} para os estudantes; recomendações de vagas para os candidatos; recomendação de candidatos para empresas e opção de contato com o candidato via \emph{Whatsapp}. Além disso, serão feitos os teste unitários e testes de qualidade de software, a fim de garantir que a aplicação esteja em conforme com os requisitos solicitados.
 
 \subsubsection{Entrega Final}
 
-Na entrega final, iremos acrescer nosso projeto com o restante das funcionalidades, tais como o \emph{dashboard} de vagas para a empresa, histórico de vagas para os estudantes, mudança de status das vagas por parte da empresa, \emph{feedback} de empresas após o processo seletivo e utilização de mais campos do banco de dados para termos mais detalhes de vagas, usuários, etc.
+Na entrega final, iremos acrescer nosso projeto com o restante das funcionalidades, tais como o \emph{dashboard} de vagas para a empresa; histórico de vagas para os estudantes; mudança de status das vagas por parte da empresa; \emph{feedback} de empresas após o processo seletivo e utilização de mais campos do banco de dados para termos mais detalhes de vagas, usuários, etc.
 
-Além disso, requisitos não funcionais, como a refatoração do código, a fim de deixá-lo mais limpo e performático, e mais testes de qualidade de software, agora com um banco de dados com mais registros, para manter o mesmo nível de performance e usabilidade que tinha antes, com poucos registros.
+Além disso, requisitos não-funcionais, como a refatoração do código, a fim de deixá-lo mais limpo e performático, e mais testes de qualidade de software, utilizando um banco de dados com mais registros, para manter o mesmo nível de performance e usabilidade que tinha antes, com poucos registros.

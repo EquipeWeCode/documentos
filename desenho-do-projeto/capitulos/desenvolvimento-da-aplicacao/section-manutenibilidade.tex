@@ -3,15 +3,15 @@
 % ----------------------------------------------------------
 \section{Manutenibilidade}
 Para que a aplicação atinja um nível adequado de qualidade é fundamental
-que se estabeleça certos requisitos e parâmetros de manutenibilidade tal como
+que se estabeleça certos requisitos e parâmetros de manutenibilidade, tal como
 ferramentas que facilitam esse processo. Através dos critérios estabelecidos, podemos
-medir o quanto o processo de desenvolvimento concorda com as boas práticas, e incentivar o uso das mesmas.
+medir o quanto o processo de desenvolvimento concorda com as boas práticas e incentivar o uso das mesmas.
 
 % ----------------------------------------------------------
 % LOGS
 % ----------------------------------------------------------
 \subsection{Logs}
-Para monitoramento da aplicação em tempo de execução, essencialmente na camada de servidor,
+Para o monitoramento da aplicação em tempo de execução, essencialmente na camada de servidor,
 os \emph{logs} serão usados para monitorar o estado dos objetos. A ferramenta a ser utilizada
 será a implementação de \emph{logs} do \gls{spring boot} que utiliza a implementação \gls{logback}.
 A ferramenta permite diversos registros, como:
@@ -23,7 +23,7 @@ A ferramenta permite diversos registros, como:
     \item \emph{error}
 \end{itemize}
 
-Assim, a cada bloco de falha da aplicação um log será colocado para que os problemas sejam identificados,
+Assim, a cada bloco de falha da aplicação um \emph{log} será colocado para que os problemas sejam identificados,
 analisados e resolvidos.
 
 % ----------------------------------------------------------
@@ -39,13 +39,13 @@ As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem
     \item Minimização do uso de variáveis, funções e objetos globais.
     \item Declarações globais estarão de forma preferencial no início do arquivo.
     \item Declaração de variáveis próximo do ponto onde são inicializadas.
-    \item Identação de 4 espaços.
+    \item Indentação de 4 espaços.
     \item Classes e interfaces em \textbf{CamelCase} e substantivos.
     \item Métodos em \textbf{camelCase} e verbos.
     \item Constantes em \textbf{UPPER\_CASE}.
 \end{itemize}
 
-No \gls{backend} os pacotes serão bem divididos, tendo o pacote model para os models, controllers para os controllers e endpoints. 
+No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \emph{endpoints}. 
 
 % ----------------------------------------------------------
 % DESIGN PATTERNS 
@@ -63,7 +63,7 @@ O Clean Code é um conjunto de boas práticas de programação que visam melhora
     \item Utilização de funções pequenas, com uma única responsabilidade abstrata
     \item Evitar booleanos de forma explícita.
     \item Diminuir a redundância e a repetição de código (Don't Repeat Yourself).
-    \item Aumentar a ortogonalidade do código, diminuindo as dependêcias e o aumentando o desacoplamento e a independência entre os módulos, de modo a de deixa-lo mais fácil de mudar (Easy To Change).
+    \item Aumentar a ortogonalidade do código, diminuindo as dependências e o aumentando o desacoplamento e a independência entre os módulos, de modo a de deixa-lo mais fácil de mudar (Easy To Change).
 \end{itemize}
 
 \subsubsection{SOLID}
@@ -104,7 +104,7 @@ A aplicação doze-fatores é uma metodologia para construir softwares como serv
 Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \gls{backend} em produção.
 
 \begin{enumerate}
-    \item Após uma mudança do código no github, uma instância da \gls{herokuci} que tem acesso ao código do github, identifica automaticamente
+    \item Após uma mudança do código no GitHub, uma instância da \gls{herokuci} que tem acesso ao código do GitHub, identifica automaticamente
     a linguagem do código; 
     \item No momento do \gls{deploy} a \gls{herokuci} constroi o código e da \gls{deploy} em uma aplicação temporária.
     \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
@@ -121,8 +121,8 @@ Para manter o serviço sempre atualizado para o usuário, a ferramenta de integr
 % ----------------------------------------------------------
 \subsection{Testes}
 Testes são ferramentas indubitáveis para o desenvolvimento da aplicação, pois garante, no processo de compilação, o comportamento esperado do programa. Além disso, testes exercem um papel na documentação, visto que abstraem de forma breve o comportamento esperado de classes e métodos,
-podendo ser consultados em caso de dúvida em relação a algum método. Esta categoria de teste é chamado teste unitário, que diferente dos testes de integração, que verificam o funcionamento do programa de uma chamada a um endpoint, verificando apenas os serviços externos.
+podendo ser consultados em caso de dúvida em relação a algum método. Esta categoria de teste é chamado teste unitário, que diferente dos testes de integração, que verificam o funcionamento do programa de uma chamada a um \emph{endpoint}, verificando apenas os serviços externos.
 
-Logo, a construção dos testes, de qualquer natureza é de suma importância para a confecção do projeto no quesito manutenibilidade, seguiremos os princípios do Test Driven Development (\gls{tdd}). Como as ferramentas de teste são específicas para cada linguagem, cada camada fará uso do seu respectivo framework.
+Logo, a construção dos testes, de qualquer natureza é de suma importância para a confecção do projeto no quesito manutenibilidade, seguiremos os princípios do Test Driven Development (\gls{tdd}). Como as ferramentas de teste são específicas para cada linguagem, cada camada fará uso do seu respectivo \gls{framework}.
 
-O \gls{backend} deverá ser testado com o framework JUnit, já no \gls{frontend} serão feitos com a biblioteca Jest, para a confecção de testes unitários.
+O \gls{backend} deverá ser testado com o \gls{framework} JUnit, já no \gls{frontend} serão feitos com a biblioteca Jest, para a confecção de testes unitários.
