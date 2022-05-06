@@ -45,7 +45,7 @@ As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem
     \item Constantes em \textbf{UPPER\_CASE}.
 \end{itemize}
 
-No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \emph{endpoints}. 
+No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \glspl{endpoint}. 
 
 % ----------------------------------------------------------
 % DESIGN PATTERNS 
@@ -83,7 +83,7 @@ O SOLID é um acrônimo para 5 princípios da programação orientada a objetos,
 A aplicação doze-fatores é uma metodologia para construir softwares como serviço que seguem os seguintes parâmetros:
 
 \begin{itemize}
-    \item \underline{Base de Código}: Uma base de código com rastreamento utilizando controle de revisão, muitos deploys.
+    \item \underline{Base de Código}: Uma base de código com rastreamento utilizando controle de revisão, muitos \glspl{deploy}.
     \item \underline{Dependências}: Declare e isole as dependências.
     \item \underline{Configurações}: Armazene as configurações no ambiente.
     \item \underline{Serviços de Apoio}: Trate os serviços de apoio, como recursos ligados.
@@ -104,7 +104,7 @@ A aplicação doze-fatores é uma metodologia para construir softwares como serv
 Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \gls{backend} em produção.
 
 \begin{enumerate}
-    \item Após uma mudança do código no GitHub, uma instância da \gls{herokuci} que tem acesso ao código do GitHub, identifica automaticamente
+    \item Após uma mudança do código no \gls{github}, uma instância da \gls{herokuci} que tem acesso ao código do \gls{github}, identifica automaticamente
     a linguagem do código; 
     \item No momento do \gls{deploy} a \gls{herokuci} constroi o código e da \gls{deploy} em uma aplicação temporária.
     \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
@@ -121,7 +121,7 @@ Para manter o serviço sempre atualizado para o usuário, a ferramenta de integr
 % ----------------------------------------------------------
 \subsection{Testes}
 Testes são ferramentas indubitáveis para o desenvolvimento da aplicação, pois garante, no processo de compilação, o comportamento esperado do programa. Além disso, testes exercem um papel na documentação, visto que abstraem de forma breve o comportamento esperado de classes e métodos,
-podendo ser consultados em caso de dúvida em relação a algum método. Esta categoria de teste é chamado teste unitário, que diferente dos testes de integração, que verificam o funcionamento do programa de uma chamada a um \emph{endpoint}, verificando apenas os serviços externos.
+podendo ser consultados em caso de dúvida em relação a algum método. Esta categoria de teste é chamado teste unitário, que diferente dos testes de integração, que verificam o funcionamento do programa de uma chamada a um \gls{endpoint}, verificando apenas os serviços externos.
 
 Logo, a construção dos testes, de qualquer natureza é de suma importância para a confecção do projeto no quesito manutenibilidade, seguiremos os princípios do Test Driven Development (\gls{tdd}). Como as ferramentas de teste são específicas para cada linguagem, cada camada fará uso do seu respectivo \gls{framework}.
 
