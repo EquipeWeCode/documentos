@@ -2,7 +2,7 @@
 
 Documentação da aplicação a ser desenvolvida para a disciplina de PI1A5 e PI2A6.
 
-Complementarmente a esta documentação, a equipe possui um [Blog](wecodeifsp.blogspot.com).
+Complementarmente a esta documentação, a equipe possui um [Blog](https://wecodeifsp.blogspot.com).
 
 ## Proposta Inicial
 
@@ -23,14 +23,6 @@ A partir do nosso objetivo principal, podemos listar alguns objetivos mais prát
 ## Desenho da Aplicação
 
 A partir da aprovação da nossa proposta inicial, deu-se início ao planejamento de como a aplicação será feita, desde a organização da equipe e seus papéis até a arquitetura da aplicação e tecnologias a serem utilizadas.
-
-### Cronograma
-
-![Cronograma](https://lh3.googleusercontent.com/_O06Y5Pp6Bd9GP4XGNAI1Xiz4Vc7b5XSaeNkr6Bmw9LOawPOT9woZ9Zw76Z5Suho4DFRCSNoRfO18ANcG2FAfJpsZbXtBJVPaBmC8pc45ixo5tdjiOXqvu3GwEXqrtcGDDoJzxzNNnW9hoLYiVM2Xw=w440-h224)
-
-### Arquitetura
-
-![Arquitetura da Aplicação](https://github.com/EquipeWeCode/documentos/blob/main/desenho-do-projeto/imagens/arq-proj-arq-app2.png)
 
 ## Enrega Inical
 
