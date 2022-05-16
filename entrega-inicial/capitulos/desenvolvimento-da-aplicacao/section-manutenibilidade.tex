@@ -1,0 +1,128 @@
+% ----------------------------------------------------------
+% MANUTENIBILIDADE
+% ----------------------------------------------------------
+\section{Manutenibilidade}
+Para que a aplicação atinja um nível adequado de qualidade é fundamental
+que se estabeleça certos requisitos e parâmetros de manutenibilidade, tal como
+ferramentas que facilitam esse processo. Através dos critérios estabelecidos, podemos
+medir o quanto o processo de desenvolvimento concorda com as boas práticas e incentivar o uso das mesmas.
+
+% ----------------------------------------------------------
+% LOGS
+% ----------------------------------------------------------
+\subsection{Logs}
+Para o monitoramento da aplicação em tempo de execução, essencialmente na camada de servidor,
+os \emph{logs} serão usados para monitorar o estado dos objetos. A ferramenta a ser utilizada
+será a implementação de \emph{logs} do \gls{spring boot} que utiliza a implementação \gls{logback}.
+A ferramenta permite diversos registros, como:
+
+\begin{itemize}
+    \item \emph{debug} 
+    \item \emph{info}
+    \item \emph{warn} 
+    \item \emph{error}
+\end{itemize}
+
+Assim, a cada bloco de falha da aplicação um \emph{log} será colocado para que os problemas sejam identificados,
+analisados e resolvidos.
+
+% ----------------------------------------------------------
+% CODE CONVENTION
+% ----------------------------------------------------------
+\subsection{Code Convention}
+Visando facilitar o entendimento mútuo entre a equipe, são feitas as convenções de código com o propósito de padronizar como os integrantes da equipe produzem seus respectivos códigos, de modo que o estilo de programação seja independente de seus autores.
+As convenções de código estabelecem estilos para a organização do código textualmente, ou seja, como os comentários são posicionados, nome de variáveis escolhidas.
+
+As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem}, de 1996. É comumente usada no desenvolvimento na linguagem java, e relativamente próxima do padrão adotado no JavaScript, podendo destacar os seguintes pontos:
+
+\begin{itemize}
+    \item Minimização do uso de variáveis, funções e objetos globais.
+    \item Declarações globais estarão de forma preferencial no início do arquivo.
+    \item Declaração de variáveis próximo do ponto onde são inicializadas.
+    \item Indentação de 4 espaços.
+    \item Classes e interfaces em \textbf{CamelCase} e substantivos.
+    \item Métodos em \textbf{camelCase} e verbos.
+    \item Constantes em \textbf{UPPER\_CASE}.
+\end{itemize}
+
+No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \glspl{endpoint}. 
+
+% ----------------------------------------------------------
+% DESIGN PATTERNS 
+% ----------------------------------------------------------
+\subsection{Design Patterns}
+Para padrões de projetos, serão essencialmente utilizados 3 padrões muito utilizados pela comunidade de desenvolvimento: Clean Code, SOLID e 12 Factor App.
+
+\subsubsection{Clean Code}
+O Clean Code é um conjunto de boas práticas de programação que visam melhorar o entendimento do código, para que facilite a leitura do mesmo. Algumas boas práticas principais listadas abaixo:
+
+\begin{itemize}
+    \item Nomes significativos para as variáveis, classes, métodos, atributos e objetos.
+    \item Utilização de constantes e enums para evitar números mágicos.
+    \item Evitar comentários que são redundantes e podem ser convertidos em códigos
+    \item Utilização de funções pequenas, com uma única responsabilidade abstrata
+    \item Evitar booleanos de forma explícita.
+    \item Diminuir a redundância e a repetição de código (Don't Repeat Yourself).
+    \item Aumentar a ortogonalidade do código, diminuindo as dependências e o aumentando o desacoplamento e a independência entre os módulos, de modo a de deixa-lo mais fácil de mudar (Easy To Change).
+\end{itemize}
+
+\subsubsection{SOLID}
+
+O SOLID é um acrônimo para 5 princípios da programação orientada a objetos, fundamental para o desenvolvimento e manutenção de software, visto que traz uma facilidade e flexibilidade no código em se adequar a mudanças, frequente no desenvolvimento.
+
+\begin{itemize}
+    \item \underline{Single Responsiblity Principle}: Uma classe deve ter apenas um motivo para mudar.
+    \item \underline{Open-Closed Principle}: Uma classe deve estar aberta para extensão, e fechada para modificação, recomendando sempre utilizar a herança e não modificar o código-fonte original.
+    \item \underline{Liskov Substitution Principle}: Uma classe derivada deve ser substituível por sua classe base.
+    \item \underline{Interface Segregation Principle}: Utilizar muitas interfaces específicas é melhor que uma interface genérica.
+    \item \underline{Dependency Inversion Principle}: Dependa de abstrações e não de implementações.
+\end{itemize}
+
+\subsubsection{12 Factor App}
+
+A aplicação doze-fatores é uma metodologia para construir softwares como serviço que seguem os seguintes parâmetros:
+
+\begin{itemize}
+    \item \underline{Base de Código}: Uma base de código com rastreamento utilizando controle de revisão, muitos \glspl{deploy}.
+    \item \underline{Dependências}: Declare e isole as dependências.
+    \item \underline{Configurações}: Armazene as configurações no ambiente.
+    \item \underline{Serviços de Apoio}: Trate os serviços de apoio, como recursos ligados.
+    \item \underline{Construa, lance, execute}: Separe estritamente os builds e execute em estágios.
+    \item \underline{Processos}: Execute a aplicação como um ou mais processos que não armazenam estado.
+    \item \underline{Vínculo de porta}: Exporte serviços por ligação de porta.
+    \item \underline{Concorrência}: Dimensione por um modelo de processo.
+    \item \underline{Descartabilidade}: Maximizar a robustez com inicialização e desligamento rápido.
+    \item \underline{Dev/prod semelhantes}: Mantenha o desenvolvimento, teste, produção o mais semelhante possível.
+    \item \underline{Logs}: Trate logs como fluxo de eventos.
+    \item \underline{Processos de Admin}: Executar tarefas de administração/gerenciamento como processos pontuais.
+\end{itemize}
+
+% ----------------------------------------------------------
+% INTEGRAÇÃO CONTINUA
+% ----------------------------------------------------------
+\subsection{Integração continua}
+Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \gls{backend} em produção.
+
+\begin{enumerate}
+    \item Após uma mudança do código no \gls{github}, uma instância da \gls{herokuci} que tem acesso ao código do \gls{github}, identifica automaticamente
+    a linguagem do código; 
+    \item No momento do \gls{deploy} a \gls{herokuci} constroi o código e da \gls{deploy} em uma aplicação temporária.
+    \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
+    \item Após a build passar nos testes com sucesso é feito o \gls{deploy} da aplicação 
+\end{enumerate}
+
+% ----------------------------------------------------------
+% ANÁLISE ESTÁTICA
+% ----------------------------------------------------------
+%\subsection{Análise estática}
+
+% ----------------------------------------------------------
+% TESTES
+% ----------------------------------------------------------
+\subsection{Testes}
+Testes são ferramentas indubitáveis para o desenvolvimento da aplicação, pois garante, no processo de compilação, o comportamento esperado do programa. Além disso, testes exercem um papel na documentação, visto que abstraem de forma breve o comportamento esperado de classes e métodos,
+podendo ser consultados em caso de dúvida em relação a algum método. Esta categoria de teste é chamado teste unitário, que diferente dos testes de integração, que verificam o funcionamento do programa de uma chamada a um \gls{endpoint}, verificando apenas os serviços externos.
+
+Logo, a construção dos testes, de qualquer natureza é de suma importância para a confecção do projeto no quesito manutenibilidade, seguiremos os princípios do Test Driven Development (\gls{tdd}). Como as ferramentas de teste são específicas para cada linguagem, cada camada fará uso do seu respectivo \gls{framework}.
+
+O \gls{backend} deverá ser testado com o \gls{framework} JUnit, já no \gls{frontend} serão feitos com a biblioteca Jest, para a confecção de testes unitários.

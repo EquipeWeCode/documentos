@@ -1,0 +1,73 @@
+% ----------------------------------------------------------
+% VIABILIDADE FINANCEIRA
+% ----------------------------------------------------------
+\section{Viabilidade Financeira}
+A análise de viabilidade financeira consiste em averiguar a viabilidade da manutenibilidade do projeto
+e da possibilidade de lucro do mesmo, a fim de fazer essa verificação será descrito cada processo.
+
+\subsection{Gerenciamento de custos}
+Aqui serão abordados os custos de desenvolvimento e o porte inicial do projeto.
+
+\subsubsection{Desenvolvimento}
+O projeto não possuirá nenhum custo de implementação, devido ao fato de ser um projeto educacional,
+todo o tempo de desenvolvimento da aplicação e documentação serão totalmente voluntários, sem custo adicional ao projeto.
+
+\subsection{Ambiente de produção}
+São apresentados os custos de manutenibilidade do projeto para os usuários. 
+Onde será feita uma previsão anual de cada plataforma utilizada.
+
+\subsubsection{\Gls{frontend}}
+A camada cliente da aplicação será hospedada na plataforma \gls{vercel}, sendo o custo de processamento e requisições da aplicação
+baixo inicialmente, a hospedagem da camada cliente não apresentará custo adicional.
+
+\subsubsection{\Gls{backend}}
+Inicialmente gratuito na plataforma \gls{heroku}.
+
+A partir do momento que for necessário grande porte, será indicado a migração para a \gls{aws} ou Azure,
+visto que garante viabilidade econômica e estratégica (pois o
+preço é calculado a partir do uso).
+
+Utilizando a calculadora da \gls{aws} \cite{aws_calc} e optando por um servidor \gls{linux} da instância
+t4g.micro com 1 vCPU e 1GiB, com armazenamento \acs{ssd} de uso geral, será
+custeado o valor de 5,76 \acs{usd} mensalmente para operar o mês inteiro.
+
+Utilizando a calculadora da Microsoft Azure \cite{azure_calc} e optando por um servidor \gls{linux} da
+instância A1 v2 com 1 núcleo e 2GB de RAM, com 10GB de armazenamento temporário, será 
+custeado o valor de 57,10 \acs{usd} mensalmente para operar o mês inteiro.
+
+\subsubsection{Banco de dados}
+Inicialmente gratuito na plataforma \gls{heroku} através do serviço de apoio \gls{heroku} Postgres.
+
+Caso a aplicação fique com um porte maior, será indicado a migração para a \gls{rds}, que suporta o serviço de banco de dados, cujo o custo é calculado em relação ao uso.
+
+Utilizando a calculadora da \gls{aws} \cite{aws_calc} e optando por um servidor da instância t3.micro
+de modelo Single-AZ OnDemand, com armazenamento \acs{ssd} para cada instância,
+será custeado o valor de 27,36 \acs{usd} mensalmente para operar o mês inteiro.
+
+\subsection{Monetização}
+Afim de gerar receita para a plataforma, são consideradas duas possibilidades de monetização.
+
+\begin{itemize}
+    \item \underline{Propagandas}: Será utilizado mediador de anúncio \emph{Google Adsense}, 
+    onde o valor varia por visualizações de anúncios e cliques nos anúncios, quanto maior a quantidade de conversão
+    de cliques por visualização, maior será a sua renda. 
+    \item \underline{Contratos}: Empresas interessadas em impulsionar as suas vagas para atingir um número maior de visualizações ou 
+    oferecer ferramentas de análises mais precisas e um melhor suporte, feito por intermédio da realização de contratos com a plataforma e 
+    que consequentemente gerará renda.
+\end{itemize}
+
+Com a estimativa de 100 a 250 visitantes por dia, considerando que pelo menos 2 páginas são visualizadas por visitantes,
+sendo a taxa de cliques em anúncios 1\% e o custo do clique 0.20 \acs{usd}, o valor mensal será de aproximadamente 10.5 \acs{usd}.
+A monetização por propaganda seria a forma de renda mais rápida para o projeto e os contratos seriam feitos
+a médio/longo prazo.
+
+\subsection{Conclusão}
+Utilizando inicialmente os servidores de baixo porte detalhados acima, não haverá custo adicional a priori.
+Contudo, o valor calculado para 250 visitantes diários com os parâmetros detalhados arrecadará 10.5 \acs{usd} mensalmente.
+
+Caso o engajamento da aplicação aumente, a medida que o número de usuários aumenta,
+incrementando proporcionalmente o rendimento com o \emph{Google Adsense}, poderá ser revisto os planos dos
+servidores para atender maiores níveis de requisições e buscar contratos com empresas para aumentar 
+a rentabilidade da plataforma.
+
+

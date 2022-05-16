@@ -1,0 +1,35 @@
+\section{Application Programming Interface (API)} %REST
+\Gls{api}, Interface de Programação de Aplicativos, é um sistema intermediário de mediação que permite a comunicação entre outros sistemas/softwares/aplicações a partir de um conjunto de protocolos e definições, ou seja,
+\begin{quoting}[rightmargin=0cm,leftmargin=4cm]
+	\begin{SingleSpace}
+		{\footnotesize APIs funcionam como se fossem contratos, com documentações que representam um acordo entre as partes interessadas. Se uma dessas partes enviar uma solicitação remota estruturada de uma forma específica, isso determinará como a aplicação da outra parte responderá.\cite{redhat_api}}
+	\end{SingleSpace}
+\end{quoting}
+Essa comunicação possibilita uma integração entre produtos e serviços sem que seus desenvolvedores conheçam como o software alheio foi feito, basta saberem as regras para requisitar uma informação e como tratar a resposta. É certo que há formas de incluir segurança no tráfego de informações, essencialmente através do gerenciamento da \ac{api} com gateways \cite{redhat_api}. Desde modo, podemos entender \ac{api} como
+\begin{quoting}[rightmargin=0cm,leftmargin=4cm]
+	\begin{SingleSpace}
+		{\footnotesize [...] um mediador entre os usuários ou clientes e os recursos ou serviços web que eles querem obter. As APIs também servem para que organizações compartilhem recursos e informações e, ao mesmo tempo, mantenham a segurança, o controle e a obrigatoriedade de autenticação, pois permitem determinar quem tem acesso e o que pode ser acessado. \cite{redhat_api}}
+	\end{SingleSpace}
+\end{quoting}
+
+\subsection{API REST}
+\Gls{rest} é um estilo de arquitetura com um conjunto de restrições \cite{redhat_apirest}. Uma \ac{api} que segue todas as seis restrições é chamada de \gls{apirestful} \cite{royfielding}. Como não se trata de um protocolo específico, não há um padrão de implementação das restrições \ac{rest}, que seguem:
+\begin{quoting}[rightmargin=0cm,leftmargin=4cm]
+	\begin{SingleSpace}
+		{\footnotesize 
+			\begin{itemize}
+				\item Arquitetura cliente-servidor: a arquitetura \ac{rest} é composta por clientes, servidores e recursos. Ela lida com as solicitações via \acs{http}.
+				\item Sem monitoração de estado: nenhum conteúdo do cliente é armazenado no servidor entre as solicitações. Em vez disso, as informações sobre o estado da sessão são mantidas com o cliente.
+				\item Capacidade de cache: o armazenamento em cache pode eliminar a necessidade de algumas interações entre o cliente e o servidor.
+				\item Sistema em camadas: as interações entre cliente e servidor podem ser mediadas por camadas adicionais. Essas camadas podem oferecer recursos extras, como balanceamento de carga, caches compartilhados ou segurança.
+				\item Código sob demanda (opcional): os servidores podem ampliar a funcionalidade de um cliente por meio da transferência de códigos executáveis.
+				\item Interface uniforme: essa restrição é essencial para o design de \glspl{apirestful} e inclui quatro vertentes:
+				\subitem -Identificação de recursos nas solicitações: os recursos são identificados nas solicitações e separados das representações retornadas para o cliente.
+				\subitem -Manipulação de recursos por meio de representações: os clientes recebem arquivos que representam recursos. Essas representações precisam ter informações suficientes para permitir a modificação ou exclusão.
+				\subitem -Mensagens autodescritivas: cada mensagem retornada para um cliente contém informações suficientes para descrever como ele deve processá-las.
+				\subitem -Hipermídia como plataforma do estado das aplicações: depois de acessar um recurso, o cliente \ac{rest} pode descobrir todas as outras ações disponíveis no momento por meio de hiperlinks. \cite{redhat_api}
+			\end{itemize}
+			}
+	\end{SingleSpace}
+\end{quoting}
+Caso não seja o objetivo criar uma \gls{apirestful}, as restrições da arquitetura \ac{rest} podem ser implementadas conforme a necessidade, tornando o desenvolvimento da \ac{api} mais fácil por não haver exigências rígidas, como um formato específico para a informação de resposta às requisições via \ac{http} ou \ac{https}, por exemplo \cite{redhat_apirest}. Porém, ainda que não haja uma obrigatoriedade, o formato \ac{json} é o mais utilizado, pois é de fácil manipulação, organização e inteligível para pessoas e máquinas.
