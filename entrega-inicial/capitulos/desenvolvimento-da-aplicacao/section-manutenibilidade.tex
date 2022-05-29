@@ -33,6 +33,7 @@ analisados e resolvidos.
 Visando facilitar o entendimento mútuo entre a equipe, são feitas as convenções de código com o propósito de padronizar como os integrantes da equipe produzem seus respectivos códigos, de modo que o estilo de programação seja independente de seus autores.
 As convenções de código estabelecem estilos para a organização do código textualmente, ou seja, como os comentários são posicionados, nome de variáveis escolhidas.
 
+\subsubsection{Codificação geral}
 As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem}, de 1996. É comumente usada no desenvolvimento na linguagem java, e relativamente próxima do padrão adotado no JavaScript, podendo destacar os seguintes pontos:
 
 \begin{itemize}
@@ -45,7 +46,12 @@ As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem
     \item Constantes em \textbf{UPPER\_CASE}.
 \end{itemize}
 
-No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \glspl{endpoint}. 
+No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \glspl{endpoint}.
+
+\subsubsection{Commits}
+%Prefixos
+
+%Novo branch antes do merge / pull request
 
 % ----------------------------------------------------------
 % DESIGN PATTERNS 
@@ -106,10 +112,76 @@ Para manter o serviço sempre atualizado para o usuário, a ferramenta de integr
 \begin{enumerate}
     \item Após uma mudança do código no \gls{github}, uma instância da \gls{herokuci} que tem acesso ao código do \gls{github}, identifica automaticamente
     a linguagem do código; 
-    \item No momento do \gls{deploy} a \gls{herokuci} constroi o código e da \gls{deploy} em uma aplicação temporária.
+    \item No momento do \gls{deploy} a \gls{herokuci} constrói o código e da \gls{deploy} em uma aplicação temporária.
     \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
     \item Após a build passar nos testes com sucesso é feito o \gls{deploy} da aplicação 
-\end{enumerate}
+\end{enumerate} 
+
+A implantação dos itens acima se deu por meio das \emph{Actions} do \gls{github}, cujos \emph{scripts} mostramos a seguir.
+
+\subsubsection{Script de integração com \gls{heroku}}
+\begin{verbatim}
+name: Deploy to development environment
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Run check
+        run: ./gradlew check
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Run build
+        run: ./gradlew build
+
+      - name: Send to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+\end{verbatim}
+
+\subsubsection{Script de integração com o Netlify}
+\begin{verbatim}
+name: 'Netlify Deploy'
+
+on:
+  release:
+    types: ['published']
+
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: jsmrcaga/action-netlify-deploy@master
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
+          NETLIFY_DEPLOY_TO_PROD: true
+          install_command: 'tsc && vite build'
+          build_directory: 'dist'
+\end{verbatim}
 
 % ----------------------------------------------------------
 % ANÁLISE ESTÁTICA

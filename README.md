@@ -24,6 +24,6 @@ A partir do nosso objetivo principal, podemos listar alguns objetivos mais prát
 
 A partir da aprovação da nossa proposta inicial, deu-se início ao planejamento de como a aplicação será feita, desde a organização da equipe e seus papéis até a arquitetura da aplicação e tecnologias a serem utilizadas.
 
-## Enrega Inical
+## Enrega Inicial
 
 - EM DESENVOLVIMENTO
