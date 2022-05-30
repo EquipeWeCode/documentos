@@ -1,0 +1,331 @@
+%
+% Formato padrão de slide 4x3, caso queria 16x9 remova o comentário do aspectratio
+% Lembre que muitos projetores são 4x3
+% se for alterar o formato é importante revisar se todos frames ficaram bons
+%
+\documentclass[%
+    %final, % com final os TODOs (todonotes) não são apresentados
+    %aspectratio=169,
+    english,
+    brazil]{ifsp-spo-beamer}
+
+% um exemplo de configuração para deixar os links com cor diferenciada...
+\hypersetup{breaklinks=true,colorlinks=true, linkcolor=, urlcolor=blue, citecolor=blue}
+
+%
+%
+% Utilizando documento e apresentação no mesmo projeto no overleaf é necessário fazer recompilação completa
+%
+
+
+\title[EstagiEI]{MVP: Website EstagiEI}
+\subtitle{Equipe WeCode}
+\date{2022-06-20}
+\AtBeginDocument{%
+% Para multiplos autores em formato tabular a lista definição deve ficar dentro do bloco do documento
+% https://tex.stackexchange.com/questions/223042/align-the-author-names-in-handout-of-beamer-by-tabular-environment
+% Uma possibilidade para a lista de autores resumida que aparece no rodapé é utilizar as iniciais dos participantes
+% A indicação em italico ajuda a saber quem deve falar sobre o assunto em um determinado slide
+\author[BP | DR | IN | LM | LL | MO]{%
+\begin{tabular}{lr}
+Bruna da Silva Pires & SP3056651 \\
+Daniel Roberto Pereira & SP3046702 \\
+Igor Nathan de Oliveira Rocha & SP305263X \\
+Leonardo Marques da Silva & SP3052591 \\
+Lucas Lima de Santana & SP3046559 \\
+Marcelo Carlos Olímpio Junior & SP3046583
+\end{tabular}}
+}
+
+\subject{\inserttitle - \insertsubtitle} % metadata - titulo do PDF
+
+
+
+% uma técnica que pode ser utilizada para facilitar o gerenciamento de quem fala durante a apresentação é redefinir os autores para que no rodapé sejam apresentados de forma diferente
+%\author[\textit{Autor1} | Autor2]{.....}
+%\author[Autor1 | \textit{Autor2}]{.....}
+
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+%
+% Escolher o formato melhor de Agenda para sua apresentação
+%
+
+\begin{frame}{Agenda - Coluna Única}
+  \tableofcontents
+  \todo{Escolher o melhor formato de agenda para sua apresentação e deixar somente uma versão}
+\end{frame}
+
+\begin{frame}{Agenda - Duas Colunas - Quebra Automática}
+ \begin{multicols}{2}
+      \tableofcontents
+ \end{multicols}
+\end{frame}
+
+\begin{frame}{Agenda - Duas Colunas - Quebra Manual}
+     \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={1-3}]
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={4-8}]
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+
+\section{Introdução}
+
+\begin{frame}{Slide 1} 
+\begin{itemize}
+  \item Apresentação IFSP-SPO com base no modelo IF-BEAMER / IFES
+
+  \item Para mais exemplos veja o modelo IF-BEAMER em :
+
+  \item \url{https://pt.overleaf.com/latex/templates/if-beamer-modelo-de-apresentacao-ifes/mfjsfzdbmsxd}.
+\end{itemize}
+\end{frame}
+
+\section{Dados}
+\subsection{Exemplo sub-seção}
+
+\begin{frame}{Beamer} 
+\begin{itemize}
+  \item Apostila Beamer e Poster com \LaTeX - Universidade Federal de Santa Maria \cite{apostila-beamer-ufsm};
+  \item Uso de bibliografia \cite{minicurso-latex-beamer-aula5};
+  \item Guia do usuário Beamer \cite{beamer-user-guide};
+  \item \url{https://paulgp.github.io/beamer_tips.html}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modelo de Documento} 
+\begin{itemize}
+  \item Modelo de documento texto disponível em : 
+  \item \url{https://www.overleaf.com/project/58a3a66af9bb74023ba1bd56}
+\end{itemize}
+\end{frame}
+
+\subsection{Ilustrações}
+
+\begin{frame}{Figura}
+
+    \begin{figure}
+        \centering
+    	\caption{\label{fig_logo}Logotipo IFSP}
+    	\includegraphics[width=0.2\textwidth]{if-logo-beamer.png}
+        \fonte{Os Autores}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Tabela}
+
+% esse exemplo foi copiado diretamente do modelo de documento https://www.overleaf.com/project/58a3a66af9bb74023ba1bd56
+\begin{table}
+\centering
+\caption{Um Exemplo de tabela}
+\label{tab-exemplo}
+\begin{tabular}{p{2.6cm}rrr}
+    \hline
+   \thead{Item} & \thead{Janeiro}  & \thead{Fevereiro}  & \thead{Março}  \\
+    \hline
+    Classes & 2  & 10 & 20  \\
+    Linhas & 100  & 250 & 543 \\
+    \hline
+\end{tabular}
+\fonte{Dados do Projeto}
+\end{table}
+\end{frame}
+
+% Esse quadro veio do documento modelo onde são mostrados quadros errados e esse como a melhor forma de apresentar informações
+\begin{frame}{Quadro}
+\begin{quadro}
+\centering
+\tiny
+\captionof{quadro}{Quadro de atividades de maneira mais clara e simples }
+\label{quadro-poluido-limpo}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\thead{Responsável} & \thead{Atividade 1} & \thead{Atividade 2} & \thead{Atividade 3} & \thead{Atividade 4} \\
+\hline
+Pessoa 1 & \circlemark       &          &             & \circlemark         \\
+\hline
+Pessoa 2 & \circlemark       &          & \circlemark      &          \\
+\hline
+Pessoa 3 &          & \circlemark         &             &          \\
+\hline
+Pessoa 4 &          & \circlemark         & \circlemark      &         \\
+\hline
+\end{tabular}
+\fonte{Os autores}
+\end{quadro}
+
+\end{frame}
+
+
+\section{Quebras}
+
+% foi utilizado enumerate para melhor visualização do exemplo, mas pode ser utilizado normalmente com itemize 
+\begin{frame}[allowframebreaks=0.8]{Exemplo de quebra automatica}
+    \begin{enumerate}
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Exemplo de quebra manual}
+    \begin{enumerate}
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        
+        \framebreak
+        
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+        \item aaaa
+    \end{enumerate}
+\end{frame}
+
+
+
+
+\section{Apresentando}
+\begin{frame}{Dicas de Apresentação}
+    \begin{itemize}
+        
+        \item Treine antes a apresentação, grave e assista para perceber os erros;
+        
+        \item Revise os slides e solicite que outras pessoas que não tenham participado da elaboração também façam essa revisão;
+        
+        \item Cronometre durante o treino para não exceder o tempo limite, durante a apresentação utilize também um cronometro para acompanhar o seu progresso, algumas ferramentas de apresentação auxiliam nesse procedimento
+        
+        \item A apresentação deve seguir o conteúdo do seu trabalho.
+        
+    \end{itemize}    
+\end{frame}
+
+%\author[Autor1 | \textit{Autor2}]{....}
+\begin{frame}{Apresentações em Equipe}
+    \begin{itemize}
+        \item Coloque um marcador nos slides que permita facilmente lembrar quem é o responsável por aquela parte (alterar o autor do rodapé é uma solução simples e discreta, compare esse slide com o anterior);
+        
+        \item Todos devem conhecer a apresentação por completo de forma a ter uma contingencia caso um dos integrantes não possa apresentar;
+        
+        \item Cada participante deve ter um tempo razoável, não devem ter muita alternância durante a apresentação.
+    \end{itemize}    
+\end{frame}
+
+
+
+% Seções somente para exemplificar as formatações possíveis para Agenda
+\section{Alfa}
+
+\section{Beta}
+
+\section{Gama}
+
+\section{Referências}
+
+% Como nos documentos as referencias vão ser apresentadas de acordo com o uso do \cite... 
+\begin{frame}[allowframebreaks]{Referências}
+\bibliography{referencias.bib}
+\end{frame}
+
+% * indica para não criar uma página de separação... e também não incluir na agenda
+\section*{Dúvidas}
+
+\newcommand{\urlApresentacao}{https://www.overleaf.com/project/606fb2f8be5c1d108ec8d237}
+\begin{frame}{Dúvidas} 
+
+
+% Endereço da Apresentação e contatos com QR-Code para facilitar acesso
+% Se for uma apresentação remota é importante colocar no CHAT da ferramenta os dados para facilitar mais ainda
+
+% dependendo do público não é necessário colocar os contatos
+% Esse layout de duas colunas foi escolhido no caso para facilitar a captura dos qr codes já que a camera pode vir pela direita ou esquerda sem muita dificuldade
+
+
+    \begin{columns}[t]
+    
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Dúvidas}
+                \begin{itemize}
+                  \item Perguntas ???
+                \end{itemize}
+
+                \begin{figure}
+                    \centering
+                    \qrcode{\urlApresentacao}
+                    \caption*{Apresentação disponível em : \newline \url{\urlApresentacao}}
+                \end{figure}
+
+            \end{block}
+        \end{column}
+    
+        % Exemplo de como gerar qr-code com email para contato....
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Contatos}
+                \begin{itemize}
+                  \item QUEM
+                  \item nome@aluno.ifsp.edu.br
+                  \item \url{https://site}
+                \end{itemize}
+    
+                \begin{figure}
+                    \centering
+                    % utilizar a opção nolink caso queira deixar o qrcode preto sem o link
+                    %\qrcode[nolink]{nome@aluno.ifsp.edu.br}
+                    \qrcode{nome@aluno.ifsp.edu.br}
+                \end{figure}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+
+
+
+\end{frame}
+
+
+\end{document}
