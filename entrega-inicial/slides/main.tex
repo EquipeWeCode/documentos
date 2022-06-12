@@ -12,11 +12,6 @@
 % um exemplo de configuração para deixar os links com cor diferenciada...
 \hypersetup{breaklinks=true,colorlinks=true, linkcolor=, urlcolor=blue, citecolor=blue}
 
-%
-%
-% Utilizando documento e apresentação no mesmo projeto no overleaf é necessário fazer recompilação completa
-%
-
 
 \title[EstagiEI]{MVP: Website EstagiEI}
 \subtitle{Equipe WeCode}
@@ -81,10 +76,13 @@ Marcelo Carlos Olímpio Junior & SP3046583
     
 \end{frame}
 \end{comment}
-
-
+%
+%.........>INTRODUÇÃO<..........
+%
 \section{Introdução}
-
+%
+%.........JUSTIFICATIVA..........
+%
 \begin{frame}{Justificativa} 
 \begin{itemize}
 	\item Dificuldade em adquirir experiência profissional através da prática de estágio;
@@ -93,7 +91,9 @@ Marcelo Carlos Olímpio Junior & SP3046583
 	\item Candidato muitas vezes não obtém o retorno sobre o processo de seleção da vaga.
 \end{itemize}
 \end{frame}
-
+%
+%.........PROPOSTA-DE-SOLUÇÃO..........
+%
 \begin{frame}{Proposta de Solução} 
 \begin{itemize}
 	\item \emph{EstagiEI} é um website para aproximar novos estudantes e empresas com vagas de estágio disponíveis
@@ -102,74 +102,114 @@ Marcelo Carlos Olímpio Junior & SP3046583
 \end{itemize}
 \end{frame}
 
-
+%
+%.........>GERENCIAMENTO<..........
+%
 \section{Gerenciamento}
 %\subsection{Metodologia}
-
+%
+%.........METODOLOGIA..........
+%
 \begin{frame}{Metodologia} 
 \begin{itemize}
   \item Scrum como guia
   \item Sprints de 1 semana
+  \item Gerenciamento via Jira Software.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Ferramenta} 
-Gerenciamento via Jira Software.
-%Add Figura
-\end{frame}
-
-\begin{frame}{Organização da Equipe} 
-%Add Figura
-\end{frame}
-
+%
+%.........CRONOGRAMA..........
+%
 \begin{frame}{Cronograma} 
 As datas foram baseadas no plano de aulas da disciplina PI1A5.
-%Add Figura
+
+	\begin{figure}
+		\centering
+		\caption{\label{fig-cronogramasem1}Cronograma de Sprints}
+		\includegraphics[width=0.8\textwidth]{../../imagens/cronograma-sprints.png}
+		\fonte{Os Autores}
+	\end{figure}
 \end{frame}
 
+%
+%.........ORGANIZAÇÃO-DA-EQUIPE..........
+%
+\begin{frame}{Organização da Equipe} 
+	\begin{figure}
+		\centering
+		\caption{\label{fig-org-team}Organização}
+		\includegraphics[width=\textwidth]{../../imagens/organizacao-equipe.png}
+		\fonte{Os Autores}
+	\end{figure}
+\end{frame}
+
+%
+%.........>APLICAÇÃO<..........
+%
 \section{Aplicação}
 
-\begin{frame}{EstagiEI}
-
-    \begin{figure}
-        \centering
-    	\caption{\label{fig_logo}Logotipo IFSP}
-    	\includegraphics[width=0.2\textwidth]{if-logo-beamer.png}
-        \fonte{Os Autores}
-    \end{figure}
-
-\end{frame}
-
+%
+%.........ARQUITETURA..........
+%
 \begin{frame}{Arquitetura} 
 	\begin{figure}
 		\centering
-		\caption{\label{fig-arq-app}Arquitetura de Aplicação}
-		\includegraphics[width=0.5\textwidth]{../../imagens/arq-proj-arq-app2.png}
+		\caption{\label{fig-arq-tec}Arquitetura de Aplicação}
+		\includegraphics[width=0.8\textwidth]{../../imagens/arq-proj-arq-tec3.png}
 		\fonte{Produzido pelos autores utilizando a ferramenta \textit{Whimsical}}
 	\end{figure}
 \end{frame}
 
-\subsection{Front-end}
-\begin{frame}{Tecnologias} 
+%
+%.........FRONT-END..........
+%
+\begin{frame}{Front-end}
+	Telas:
+	\begin{itemize}
+		\item Login
+		\item Listagem das vagas
+		\item "Not found"
+	\end{itemize}
+
+	Internacionalização: Português (PT-BR) e Inglês (EN-US)
+\end{frame}
+
+%
+%.........BACK-END..........
+%
+\begin{frame}{Back-end}
+	Endpoints:
+	\begin{itemize}
+		\item api/loginEstudante
+		\item api/estudante/{id}
+		\item api/vaga
+	\end{itemize}
 	
 \end{frame}
 
-\begin{frame}{Hospedagem} 
-	
+%
+%.........ESCOPO-MVP..........
+%
+\begin{frame}{Implementações do MVP}
+	\begin{itemize}
+		\item Login com Google
+		\item Lógica de Recomendação de Vagas para os estudantes
+		\item Testes unitários
+	\end{itemize}
 \end{frame}
 
-\subsection{Back-end}
-\begin{frame}{Tecnologias} 
-	
-\end{frame}
-
-\begin{frame}{Hospedagem} 
-	
-\end{frame}
-
+%
+%.........DEMONSTRAÇÃO..........
+%
 \section{Demonstração}
 \begin{frame}{Website} 
-%Add Figure Tela de Início
+	%Add Logo
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{../../imagens/estagiei-logo.png}
+		\fonte{Os Autores}
+	\end{figure}
 \end{frame}
 
 \begin{comment}
@@ -311,7 +351,7 @@ Pessoa 4 &          & \circlemark         & \circlemark      &         \\
 \section{Beta}
 
 \section{Gama}
-\end{comment}
+
 
 \section{Referências}
 
@@ -319,7 +359,7 @@ Pessoa 4 &          & \circlemark         & \circlemark      &         \\
 \begin{frame}[allowframebreaks]{Referências}
 \bibliography{referencias.bib}
 \end{frame}
-
+\end{comment}
 % * indica para não criar uma página de separação... e também não incluir na agenda
 \section*{Dúvidas}
 
@@ -352,19 +392,19 @@ Pessoa 4 &          & \circlemark         & \circlemark      &         \\
         \end{column}
     
         % Exemplo de como gerar qr-code com email para contato....
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.55\textwidth}
             \begin{block}{Contatos}
                 \begin{itemize}
-                  \item QUEM
-                  \item nome@aluno.ifsp.edu.br
-                  \item \url{https://site}
+                  \item Equipe WeCode
+                  \item wecodetrabalho@gmail.com
+                  \item \url{https://wecodeifsp.blogspot.com}
                 \end{itemize}
     
                 \begin{figure}
                     \centering
                     % utilizar a opção nolink caso queira deixar o qrcode preto sem o link
                     %\qrcode[nolink]{nome@aluno.ifsp.edu.br}
-                    \qrcode{nome@aluno.ifsp.edu.br}
+                    \qrcode{wecodetrabalho@gmail.com}
                 \end{figure}
             \end{block}
         \end{column}
