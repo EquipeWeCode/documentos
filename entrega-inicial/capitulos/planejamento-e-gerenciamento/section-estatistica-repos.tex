@@ -36,9 +36,7 @@ A partir dos commits feitos nos repositórios, levantamos estatísticas sobre no
 O \gls{git} foi usado como nosso versionador principal, então os dados abaixo estão bem próximos da realidade.
 
 A \autoref{overview-front} demonstra uma visão geral sobre alguns dados do repositório onde hospedamos o nosso \gls{frontend}.
-\begin{pspicture}(25mm,25mm)
-    \psbarcode{https://github.com/EquipeWeCode/estagiei-frontend}{eclevel=H width=1.0 height=1.0}{qrcode}
-\end{pspicture}
+
 \begin{figure}[H]
 	\centering
 	\caption{\label{overview-front}Visão geral - Projeto \gls{frontend}}
@@ -48,28 +46,47 @@ A \autoref{overview-front} demonstra uma visão geral sobre alguns dados do repo
 
 A \autoref{overview-back} demonstra uma visão geral sobre alguns dados do repositório onde hospedamos o nosso backend, e podemos notar algumas diferenças entre ele e o \gls{frontend}.
 
-\begin{pspicture}(25mm,25mm)
-    \psbarcode{https://github.com/EquipeWeCode/estagiei-backend}{eclevel=H width=1.0 height=1.0}{qrcode}
-\end{pspicture}
+\begin{figure}[htb]
+	\caption{\label{qr-url-front}URL do repositório \gls{frontend}}
+	\begin{center}
+		\geraQRCode{https://github.com/EquipeWeCode/estagiei-frontend/}
+		\legend{\url{https://github.com/EquipeWeCode/estagiei-frontend/}}
+		\fonte{Os Autores.}
+	\end{center}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
-	\caption{\label{overview-back}Visão geral - Projeto Backend}
+	\caption{\label{overview-back}Visão geral - Projeto \gls{backend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/overview-backend.png}
 	\fonte{Os autores - Criado via \gls{gitstats}}
 \end{figure}
 
-A \autoref{overview-doc} demonstra uma visão geral sobre alguns dados principais do nosso repositório onde versionamos os documentos latex do nosso projeto.
+\begin{figure}[htb]
+	\caption{\label{qr-url-back}URL do repositório \gls{backend}}
+	\begin{center}
+		\geraQRCode{https://github.com/EquipeWeCode/estagiei-backend}
+		\legend{\url{https://github.com/EquipeWeCode/estagiei-backend}}
+		\fonte{Os Autores.}
+	\end{center}
+\end{figure}
 
-\begin{pspicture}(25mm,25mm)
-    \psbarcode{https://github.com/EquipeWeCode/documentos}{eclevel=H width=1.0 height=1.0}{qrcode}
-\end{pspicture}
+A \autoref{overview-doc} demonstra uma visão geral sobre alguns dados principais do nosso repositório onde versionamos os documentos \LaTeX do nosso projeto.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{overview-doc}Visão geral - Projeto Documentos}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/overview-documentos.png}
 	\fonte{Os autores - Criado via \gls{gitstats}}
+\end{figure}
+
+\begin{figure}[htb]
+	\caption{\label{qr-url-1}URL do repositório de documentos \LaTeX}
+	\begin{center}
+		\geraQRCode{https://github.com/EquipeWeCode/documentos}
+		\legend{\url{https://github.com/EquipeWeCode/documentos}}
+		\fonte{Os Autores.}
+	\end{center}
 \end{figure}
 
 A \autoref{lines-of-code-front} demonstra a evolução em número de linhas do nosso repositório do projeto \gls{frontend}.

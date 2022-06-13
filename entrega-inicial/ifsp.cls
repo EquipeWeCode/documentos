@@ -116,10 +116,18 @@
 }
 
 \ifthenelse{\boolean{utilizarQRCODE}}{%
-    % para gerar códigos de barra incluindo qrcode
-    \RequirePackage{pstricks}
-    \RequirePackage{pst-barcode}
-}{}
+	% para gerar códigos de barra incluindo qrcode
+	
+	% pstricks depende de utilizar XeLaTeX
+	%\RequirePackage{pstricks}
+	%\RequirePackage{pst-barcode}
+	
+	\usepackage{qrcode}
+	\qrset{height=2.5cm,level=H,link}
+	\newcommand{\geraQRCode}[1]{\qrcode{#1}}
+}{%
+	\newcommand{\geraQRCode}[1]{QRCODE NÂO HABILITADO : #1}
+}
 
 % Define opcoes de glossario caso seja utilizado	        
 \PassOptionsToPackage{nopostdot,nogroupskip,style=super,toc=false}{glossaries}
