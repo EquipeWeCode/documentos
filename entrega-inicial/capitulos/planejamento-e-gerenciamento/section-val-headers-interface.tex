@@ -14,6 +14,15 @@ Para os testes de \emph{headers} de segurança, usamos o site \gls{secheaders}, 
 	\fonte{\cite{securityheaders}}
 \end{figure}
 
+\begin{figure}[htb]
+	\caption{\label{qr-url-swagger}URL da documentação dos nossos endpoints (Swagger UI)}
+	\begin{center}
+		\geraQRCode{https://estagiei.herokuapp.com/swagger-ui/}
+		\legend{\url{https://estagiei.herokuapp.com/swagger-ui/}}
+		\fonte{Os Autores.}
+	\end{center}
+\end{figure}
+
 \subsection{Teste de \ac{tls} do \gls{frontend}}
 Também testamos nosso \emph{website} com relação ao certificado \ac{tls}, que indica se um site utiliza o protocolo \ac{https} ou não. E por nossa aplicação estar hospedada no \gls{netlify}, ele automaticamente já providencia um certificado com o \gls{letsencrypt} quando criamos um domínio personalizado. Assim como mostra a \autoref{grade-server-test}, nossa aplicação possui um certificado \ac{tls} ativo.
 
@@ -22,6 +31,15 @@ Também testamos nosso \emph{website} com relação ao certificado \ac{tls}, que
 	\caption{\label{grade-server-test}Teste de \ac{tls}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/grade-server-test.png}
 	\fonte{\cite{ssllabs}}
+\end{figure}
+
+\begin{figure}[htb]
+	\caption{\label{qr-url-frontend}URL do \gls{frontend} da nossa aplicação}
+	\begin{center}
+		\geraQRCode{https://estagiei.netlify.app/}
+		\legend{\url{https://estagiei.netlify.app/}}
+		\fonte{Os Autores.}
+	\end{center}
 \end{figure}
 
 \subsection{Teste de desempenho do \gls{frontend}}
