@@ -40,13 +40,13 @@ As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem
     \item Minimização do uso de variáveis, funções e objetos globais.
     \item Declarações globais estarão de forma preferencial no início do arquivo.
     \item Declaração de variáveis próximo do ponto onde são inicializadas.
-    \item Indentação de 4 espaços.
+    \item Indentação de 4 espaços no \gls{backend} e 2 espaços no \gls{frontend}.
     \item Classes e interfaces em \textbf{CamelCase} e substantivos.
     \item Métodos em \textbf{camelCase} e verbos.
     \item Constantes em \textbf{UPPER\_CASE}.
 \end{itemize}
 
-No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{model} para os \emph{models}, \emph{controllers} para os \emph{controllers} e \glspl{endpoint}.
+No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{entity} para as entidades mapeadas do banco de dados, \emph{controller} para os \emph{controllers} e \glspl{endpoint} e \emph{service}, além de outros pacotes para fins de separação de código.
 
 \subsubsection{Commits}
 Para os commits dos repositórios de front e back-end estamos utilizando a convenção de usar prefixos que melhor identificam do que se trata aquele commit.
@@ -57,13 +57,13 @@ São eles:
 	\item \textbf{feat:} introdução de uma nova funcionalidade;
 \end{itemize}
 
-Além disso também realizamos a prática de realizar Pull requests ao invés de mandar as alterações diretamente.
+Além disso também realizamos a prática de realizar \emph{Pull Requests} ao invés de mandar as alterações diretamente no ramo principal do repositório.
 
 % ----------------------------------------------------------
 % DESIGN PATTERNS 
 % ----------------------------------------------------------
-\subsection{Design Patterns}
-Para padrões de projetos, serão essencialmente utilizados 3 padrões muito utilizados pela comunidade de desenvolvimento: Clean Code, SOLID e 12 Factor App.
+\subsection{Design Patterns e boas práticas}
+Para padrões de projetos, serão essencialmente utilizados 3 padrões muito utilizados pela comunidade de desenvolvimento: \emph{Factory Method}, \emph{Builder} e \emph{Facade}, além da possibilidade de usarmos outros conforme a necessidade.
 
 \subsubsection{Clean Code}
 O Clean Code é um conjunto de boas práticas de programação que visam melhorar o entendimento do código, para que facilite a leitura do mesmo. Algumas boas práticas principais listadas abaixo:
