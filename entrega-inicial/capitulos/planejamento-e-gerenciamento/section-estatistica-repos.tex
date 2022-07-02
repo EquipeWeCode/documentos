@@ -2,38 +2,38 @@
 % ESTATÍSTICA DOS REPOSITÓRIOS
 % ----------------------------------------------------------
 \section{Estatísticas dos repositórios}
-Nesta seção serão apresentadas as estatísticas de cada versionador de código, com detalhes da atuação de cada integrante da equipe e dos commits feitos durante o desenvolvimento.
+Nesta seção serão apresentadas as estatísticas de cada versionador de código, com detalhes da atuação de cada integrante da equipe e dos \emph{commits} feitos durante o desenvolvimento.
 
 \subsection{SVN}
-Estatísticas sobre o repositório no \gls{svn} foram geradas através do \gls{statsvn} apesar de não ter sido usado como nosso versionador principal, então os dados sobre os autores que participaram não devem ser considerados como a realidade. Usamos o SVN por ser obrigatório no projeto e fizemos atualizações esporádicas lá com nosso código versionado no Git.
+Estatísticas sobre o repositório no \gls{svn} foram geradas através do \gls{statsvn} apesar de ter sido usado apenas para atualização recorrente do repositório, então não foram considerados dados estatísticos sobre atividade de cada membro da equipe.
 
 A \autoref{svn-lines-code} mostra a evolução de linhas de código conforme o tempo.
 \begin{figure}[H]
 	\centering
 	\caption{\label{svn-lines-code}Linhas de código - SVN}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/svn-lines-code.png}
-	\fonte{Os autores - Criado via \gls{statsvn}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{svn-author-activity} mostra as atividades dos autores participantes no repositório. Cabendo ressaltar que não condiz com a realidade.
+A \autoref{svn-author-activity} mostra os horários onde mais foram feitos \emph{commits} em todos os dias.
 \begin{figure}[H]
 	\centering
-	\caption{\label{svn-author-activity}Atividade dos autores - SVN}
-	\includegraphics[width=0.95\textwidth]{../imagens/stats/svn-author-activity.png}
-	\fonte{Os autores - Criado via \gls{statsvn}}
+	\caption{\label{svn-activity-hour}Atividade por hora do dia - SVN}
+	\includegraphics[width=0.95\textwidth]{../imagens/stats/svn-activity-hour.png}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{svn-activity-day} mostra a quantidade de commits por dia da semana.
+A \autoref{svn-activity-day} mostra a quantidade de \emph{commits} por dia da semana, é notório a alta quantidade de atividade aos domingos.
 \begin{figure}[H]
 	\centering
 	\caption{\label{svn-activity-day}Atividade por dia da semana - SVN}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/svn-activity-day.png}
-	\fonte{Os autores - Criado via \gls{statsvn}}
+	\fonte{Os autores.}
 \end{figure}
 
 \subsection{GitHub}
-A partir dos commits feitos nos repositórios, levantamos estatísticas sobre nosso projeto através do \gls{gitstats}, que servem de base para termos uma ideia de como foi o andamento do projeto e o que cada integrante da equipe fez durante o período.
-O \gls{git} foi usado como nosso versionador principal, então os dados abaixo estão bem próximos da realidade.
+A partir dos commits feitos nos repositórios, foram levantadas estatísticas sobre o projeto através do \gls{gitstats}, que servem de base para se ter uma ideia de como foi o andamento do projeto e o que cada integrante da equipe fez durante o período.
+O \gls{git} foi usado como nosso versionador principal, então os dados abaixo estão de acordo com a atividade de cada integrante.
 
 A \autoref{overview-front} demonstra uma visão geral sobre alguns dados do repositório onde hospedamos o nosso \gls{frontend}.
 
@@ -41,10 +41,10 @@ A \autoref{overview-front} demonstra uma visão geral sobre alguns dados do repo
 	\centering
 	\caption{\label{overview-front}Visão geral - Projeto \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/overview-frontend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores}
 \end{figure}
 
-A \autoref{overview-back} demonstra uma visão geral sobre alguns dados do repositório onde hospedamos o nosso backend, e podemos notar algumas diferenças entre ele e o \gls{frontend}.
+A \autoref{overview-back} demonstra uma visão geral sobre alguns dados do repositório onde foi hospedado o backend. É possível notar algumas diferenças entre ele e o \gls{frontend}.
 
 \begin{figure}[htb]
 	\caption{\label{qr-url-front}URL do repositório \gls{frontend}}
@@ -59,7 +59,7 @@ A \autoref{overview-back} demonstra uma visão geral sobre alguns dados do repos
 	\centering
 	\caption{\label{overview-back}Visão geral - Projeto \gls{backend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/overview-backend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
 \begin{figure}[htb]
@@ -71,13 +71,13 @@ A \autoref{overview-back} demonstra uma visão geral sobre alguns dados do repos
 	\end{center}
 \end{figure}
 
-A \autoref{overview-doc} demonstra uma visão geral sobre alguns dados principais do nosso repositório onde versionamos os documentos \LaTeX do nosso projeto.
+A \autoref{overview-doc} demonstra uma visão geral sobre alguns dados principais do repositório onde foi versionado os documentos \LaTeX do projeto.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{overview-doc}Visão geral - Projeto Documentos}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/overview-documentos.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
 \begin{figure}[htb]
@@ -89,66 +89,66 @@ A \autoref{overview-doc} demonstra uma visão geral sobre alguns dados principai
 	\end{center}
 \end{figure}
 
-A \autoref{lines-of-code-front} demonstra a evolução em número de linhas do nosso repositório do projeto \gls{frontend}.
+A \autoref{lines-of-code-front} demonstra a evolução em número de linhas do repositório onde foi hospedado o \gls{frontend}.
 \begin{figure}[H]
 	\centering
 	\caption{\label{lines-of-code-front}Linhas de código - Projeto \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/lines-of-code-frontend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{lines-of-code-back} demonstra a evolução em número de linhas do nosso repositório do projeto backend.
+A \autoref{lines-of-code-back} demonstra a evolução em número de linhas do repositório onde foi hospedado o \gls{backend}.
 \begin{figure}[H]
 	\centering
 	\caption{\label{lines-of-code-back}Linhas de código - Projeto Backend}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/lines-of-code-backend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-Cabe ressaltar que o número de linhas não necessariamente diz que criamos muito código, como demonstra a \autoref{extensions-frontend}, grande parte das linhas do nosso \gls{frontend} são de arquivos .json, principalmente do package-lock.json, que é gerado automaticamente e documenta e versiona as dependências do nosso projeto.
+Cabe ressaltar que o número de linhas não necessariamente diz que foi desenvolvido muito código, como demonstra a \autoref{extensions-frontend}, grande parte das linhas do nosso \gls{frontend} são de arquivos .json, principalmente do package-lock.json, que é gerado automaticamente e documenta e versiona as dependências do projeto.
 \begin{figure}[H]
 	\centering
 	\caption{\label{extensions-frontend}Extensão de arquivos - Projeto \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/extensions-frontend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{list-of-authors-front} lista os autores que contribuíram no repositório \gls{frontend}. Cabe ressaltar que o autor Leonardo Marques e o LeonMarqs são a mesma pessoa, que por algum motivo ficaram separadas nas estatísticas.
+A \autoref{list-of-authors-front} lista os autores que contribuíram no repositório \gls{frontend}.
 \begin{figure}[H]
 	\centering
 	\caption{\label{list-of-authors-front}Dias da semana - Projeto \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/list-of-authors-frontend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{list-of-authors-back} lista os autores que contribuíram no repositório backend.
+A \autoref{list-of-authors-back} lista os autores que contribuíram no repositório \gls{backend}.
 \begin{figure}[H]
 	\centering
 	\caption{\label{list-of-authors-back}Lista de autores - Projeto Backend}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/list-of-authors-backend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{list-of-authors-doc} lista os autores que contribuíram no repositório de documentos, onde houve o mesmo problema de separação da mesma pessoa (Leonardo Marques).
+A \autoref{list-of-authors-doc} lista os autores que contribuíram no repositório de documentos, no qual todos os membros da equipe participaram.
 \begin{figure}[H]
 	\centering
 	\caption{\label{list-of-authors-doc}Lista de autores - Projeto Documentos}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/list-of-authors-documentos.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{days-of-week-frontend} mostra os dias da semana em que foram feitos mais commits no repositório \gls{frontend}. (Sendo 1 = segunda).
+A \autoref{days-of-week-frontend} mostra os dias da semana em que foram feitos mais \emph{commits} no repositório \gls{frontend}, é notável que aos domingos a quantidade de \emph{commits} nos fins de semana é maior do que nos dias da semana.
 \begin{figure}[H]
 	\centering
 	\caption{\label{days-of-week-frontend}Dias da semana - Projeto \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/days-of-week-frontend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}
 
-A \autoref{days-of-week-frontend} mostra os dias da semana em que foram feitos mais commits no repositório backend. (Sendo 1 = segunda).
+A \autoref{days-of-week-backend} mostra os dias da semana em que foram feitos mais \emph{commits} no repositório \gls{backend}, pode-se notar uma alta taxa de \emph{commits} durante o domingo, enquanto o resto da semana permanece de forma quase igual, com exceção da sexta-feira e segunda-feira que possuem um percentual de atividade menor que os demais dias da semana.
 \begin{figure}[H]
 	\centering
 	\caption{\label{days-of-week-backend}Dias da semana - Projeto Backend}
 	\includegraphics[width=0.95\textwidth]{../imagens/stats/days-of-week-backend.png}
-	\fonte{Os autores - Criado via \gls{gitstats}}
+	\fonte{Os autores.}
 \end{figure}

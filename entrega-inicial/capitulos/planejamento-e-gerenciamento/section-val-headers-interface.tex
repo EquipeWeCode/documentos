@@ -5,13 +5,13 @@
 Nessa seção serão abordados algumas validações que fizemos na nossa aplicação e a justificativa deles.
 
 \subsection{Teste dos \emph{headers} da API}
-Para os testes de \emph{headers} de segurança, usamos o site \gls{secheaders}, onde pudemos ver em qual nota se enquadrava nossa \ac{api}. Testamos um dos nossos \emph{endpoints} (O resultado é o mesmo para todos), e durante o primeiro teste, o site nos deu nota F, pela resposta da nossa aplicação não conter nenhum \emph{header} de segurança, então com base nesse resultado, adicionamos essas dependências que faltavam e conseguimos subir a nota, como demonstra a \autoref{sec-headers}.
+Para os testes de \emph{headers} de segurança, foi usado o site \gls{secheaders}, onde é possível verificar em qual nota se enquadrava a \ac{api} do projeto. Foram feitos testes de um dos nossos \emph{endpoints} (O resultado é o mesmo para todos), e durante o primeiro teste, o site indicou que nota F, pela resposta da aplicação não conter nenhum \emph{header} de segurança, então com base nesse resultado, foi adicionado as dependências que faltavam e assim, foi possível subir a nota, como demonstra a \autoref{sec-headers}.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{sec-headers}Validação dos \emph{headers}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/grade-security-headers.png}
-	\fonte{\cite{securityheaders}}
+	\fonte{Os autores.}
 \end{figure}
 
 \begin{figure}[htb]
@@ -24,13 +24,13 @@ Para os testes de \emph{headers} de segurança, usamos o site \gls{secheaders}, 
 \end{figure}
 
 \subsection{Teste de \ac{tls} do \gls{frontend}}
-Também testamos nosso \emph{website} com relação ao certificado \ac{tls}, que indica se um site utiliza o protocolo \ac{https} ou não. E por nossa aplicação estar hospedada no \gls{netlify}, ele automaticamente já providencia um certificado com o \gls{letsencrypt} quando criamos um domínio personalizado. Assim como mostra a \autoref{grade-server-test}, nossa aplicação possui um certificado \ac{tls} ativo.
+Também foi testado o \emph{website} com relação ao certificado \ac{tls}, que indica se um site utiliza o protocolo \ac{https} ou não. E pela aplicação estar hospedada no \gls{netlify}, ele automaticamente já providencia um certificado com o \gls{letsencrypt} quando é criado um domínio personalizado. Assim como mostra a \autoref{grade-server-test}, a aplicação possui um certificado \ac{tls} ativo.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{grade-server-test}Teste de \ac{tls}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/grade-server-test.png}
-	\fonte{\cite{ssllabs}}
+	\fonte{Os autores}
 \end{figure}
 
 \begin{figure}[htb]
@@ -43,13 +43,13 @@ Também testamos nosso \emph{website} com relação ao certificado \ac{tls}, que
 \end{figure}
 
 \subsection{Teste de desempenho do \gls{frontend}}
-Através da extensão \gls{lighthouse}, verificamos como estava o desempenho, acessibilidade, etc. Da nossa tela de login, e percebemos pontos a serem melhorados, principalmente na questão do desempenho. Pontos esses que serão ajustados no próximo semestre. A \autoref{lighthouse-test} ilustra o resultado.
+Através da extensão \gls{lighthouse}, foi verificado como estava o desempenho, acessibilidade, etc. Da tela de login, e foi percebido pontos a serem melhorados, principalmente na questão do desempenho. Pontos esses que serão ajustados no próximo semestre. A \autoref{lighthouse-test} ilustra o resultado.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{lighthouse-test}Teste de desempenho do \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/lighthouse-test.png}
-	\fonte{\gls{lighthouse}}
+	\fonte{Os autores.}
 \end{figure}
 
 \subsection{Análise de código}
@@ -59,23 +59,23 @@ Fizemos também uma verificação no nosso código, tanto no \gls{frontend} como
 	\centering
 	\caption{\label{better-code-front}Análise de código do \gls{frontend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/better-code-front.png}
-	\fonte{\gls{bettercode}}
+	\fonte{Os autores.}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{better-code-back}Análise de código do \gls{backend}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/better-code-back.png}
-	\fonte{\gls{bettercode}}
+	\fonte{Os autores.}
 \end{figure}
 
 \subsection{Validador \ac{html}}
-Fizemos também uma verificação no nosso \ac{html} do \ac{frontend}. A \autoref{validador-html} demonstra o resultado.
+Foi feito também uma verificação no \ac{html} do \ac{frontend}. A \autoref{validador-html} demonstra o resultado.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{validador-html}Validação do \ac{html}}
 	\includegraphics[width=0.95\textwidth]{../imagens/web-tests/validador-html.png}
-	\fonte{\cite{w3c-validator}}
+	\fonte{Os autores.}
 \end{figure}
 
