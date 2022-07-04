@@ -113,14 +113,40 @@ A aplicação doze-fatores é uma metodologia para construir softwares como serv
 % INTEGRAÇÃO CONTINUA
 % ----------------------------------------------------------
 \subsection{Integração continua}
-Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \gls{backend} em produção.
-
+Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \gls{backend} em produção. O mesmo foi feito com o \gls{netlify} em relação ao \gls{frontend}.
+\subsubsection{Back-end}
 \begin{enumerate}
     \item Após uma mudança do código no \gls{github}, uma instância da \gls{herokuci} que tem acesso ao código do \gls{github}, identifica automaticamente
     a linguagem do código; 
-    \item No momento do \gls{deploy} a \gls{herokuci} constrói o código e da \gls{deploy} em uma aplicação temporária.
+    \item No momento do \emph{\gls{deploy}} a \gls{herokuci} constrói o código e da \emph{\gls{deploy}} em uma aplicação temporária.
     \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
-    \item Após a build passar nos testes com sucesso é feito o \gls{deploy} da aplicação 
+    \item Após a \emph{build} passar nos testes com sucesso é feito o \emph{\gls{deploy}} da aplicação 
 \end{enumerate} 
 
 A implantação dos itens acima se deu por meio das \emph{Actions} do \gls{github}.
+
+\begin{figure}[htb]
+	\caption{\label{qr-url-back}URL do \emph{Actions} do \gls{backend}}
+	\begin{center}
+		\geraQRCode{https://github.com/EquipeWeCode/estagiei-backend/blob/develop/.github/workflows/deploy-develop.yml}
+		\legend{\url{https://github.com/EquipeWeCode/estagiei-backend/blob/develop/.github/workflows/deploy-develop.yml}}
+		\fonte{Os Autores.}
+	\end{center}
+\end{figure}
+
+\subsubsection{Front-end}
+\begin{enumerate}
+    \item Após uma mudança do código no \gls{github}, uma instância da \gls{netlify} que tem acesso ao código do \gls{github} identifica automaticamente essa mudança.
+    \item Essas mudanças passam por testes, cujos resultados são mostrados ao usuário através de uma interface.
+    \item Após passar nos testes com sucesso é feito o \emph{\gls{deploy}} da aplicação 
+\end{enumerate} 
+
+A implantação dos itens acima se deu por meio das \emph{Actions} do \gls{github}.
+\begin{figure}[htb]
+	\caption{\label{qr-url-back}URL do \emph{Actions} do \gls{frontend}}
+	\begin{center}
+		\geraQRCode{https://github.com/EquipeWeCode/estagiei-frontend/blob/develop/.github/workflows/main.yml}
+		\legend{\url{https://github.com/EquipeWeCode/estagiei-frontend/blob/develop/.github/workflows/main.yml}}
+		\fonte{Os Autores.}
+	\end{center}
+\end{figure}
