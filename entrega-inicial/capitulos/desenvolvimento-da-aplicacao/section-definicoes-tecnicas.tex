@@ -25,47 +25,147 @@ Está seção tem por objetivo demonstrar as modelagens e padronizações utiliz
 \subsection{Dicionário de Dados}
 A seguir mostramos as tabelas do nosso dicionário de dados.
 
-\begin{figure}[H]
-	\centering 
-	\caption{\label{fig:dicio-leg}Legenda}
-	\includegraphics[width=0.6\textwidth]{../imagens/dicio-legenda.png} 
-	\fonte{Os autores}
-\end{figure}
+\begin{quadro}[H]
+	\caption{Legenda}
+	\centering
+	\begin{tabular}{| c | c |}
+		\hline
+		\thead{Sigla}	& \thead{Descrição}\\
+		\hline
+		PK			& Primary Key					\\
+		\hline
+		FK		& Foregin Key			\\
+		\hline
+		NN			& Not Null			\\
+		\hline
+		
+		UQ			& Unique			\\
+		\hline
+		
+		CK			& Check			\\
+		\hline
+		
+		DEFAULT			& Default			\\
+		\hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Legendas}
+\end{quadro}
 
-\begin{figure}[H]
-	\centering 
-	\caption{\label{fig:dicio-user}Campos Usuário}
-	\includegraphics[width=0.8\textwidth]{../imagens/dicio-tb-usuario.png}
-	\fonte{Os autores}
-\end{figure}
+\begin{quadro}[H]
+	\caption{Campos Usuário}
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_usuario & VARCHAR      & PK      & Identificador único para usuário         \\ \hline
+		Senha        & VARCHAR(50)  &         & Senha de acesso                          \\ \hline
+		Papel        & VARCHAR(25)  & DEFAULT & Papel de acesso do usuário no sistema    \\ \hline
+		Email        & VARCHAR(50)  &         & Email de acesso                          \\ \hline
+		Avatar       & VARCHAR(100) &         & Armazenamento de imagem do perfil Google \\ \hline
+		Ind\_Ativo   & BOOLEAN      & DEFAULT & Indicador de estado                      \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Usuário}
+\end{quadro}
 
-\begin{figure}[H]
-	\centering 
-	\caption{\label{fig:dicio-person}Campos Pessoa}
-	\includegraphics[width=0.8\textwidth]{../imagens/dicio-tb-pessoa.png} 
-	\fonte{Os autores}
-\end{figure}
 
-\begin{figure}[H]
-	\centering 
-	\caption{\label{fig:dicio-student}Campos Estudante}
-	\includegraphics[width=0.8\textwidth]{../imagens/dicio-tb-estudante.png} 
-	\fonte{Os autores}
-\end{figure}
 
-\begin{figure}[H]
-	\centering 
-	\caption{\label{fig:dicio-company}Campos Empresa}
-	\includegraphics[width=0.8\textwidth]{../imagens/dicio-tb-empresa.png} 
-	\fonte{Os autores}
-\end{figure}
+\begin{quadro}[H]
+	\caption{Campos Pessoa}
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		Cod\_Pessoa   & SERIAL      & PK      & Identificador único para pessoa         \\ \hline
+		Cod\_Endereco & SERIAL      & FK, NN  & Chave estrangeira vinda da tb\_endereco \\ \hline
+		Nome          & VARCHAR(50) & NN      & Nome                                    \\ \hline
+		Dt\_Nasc      & DATE        & NN      & Data de nascimento                      \\ \hline
+		RG            & VARCHAR(11) & NN      & Registro Geral                          \\ \hline
+		CPF           & VARCHAR(13) & NN, UQ  & Cadastro de Pessoa Física               \\ \hline
+		Ind\_Ativo    & BOOLEAN     & DEFAULT & Indicador de estado                     \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Usuário}
+\end{quadro}
 
-\begin{figure}[H]
-	\centering 
-	\caption{\label{fig:dicio-rh}Campos Representante RH}
-	\includegraphics[width=0.8\textwidth]{../imagens/dicio-tb-representante-rh.png}
-	\fonte{Os autores}
-\end{figure}
+\begin{quadro}[H]
+	\caption{Campos Vaga}
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		Cod\_Vaga     & SERIAL      & PK      & Indicador único                 \\ \hline
+		Cod\_Empresa  & SERIAL      & FK NN   & Chave estrangeira da tb\_empresa  \\ \hline
+		Descricao     & TEXT        &         & Descrição da vaga                       \\ \hline
+		Salario       & FLOAT(5)    &         & Remuneração da vaga                     \\ \hline
+		Titulo        & VARCHAR(30) &         & Titulo da vaga                          \\ \hline
+		Cod\_endereco & SERIAL      & FK NN   & Chave estrangeira da tb\_endereco \\ \hline
+		Ind\_Ativo    & BOOLEAN     & DEFAULT & Indicador de estado da vaga             \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Vaga}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos Curso}
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		Cod\_Curso  & SERIAL      & PK      & Identificador único\\ \hline
+		Descricao   & VARCHAR(50) & NN, UQ  & Descrição do curso                                            \\ \hline
+		Tipo\_Curso & CHAR(1)     & NN      & Tipo do Curso) \\ \hline
+		Ind\_Ativo  & BOOLEAN     & DEFAULT & Indicador de estado da tb\_curso                              \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Curso}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos Estudante}
+	
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		Cod\_Estudante         & VARCHAR & PK         & Identificador único  \\ \hline
+		Cod\_Pessoa            & SERIAL  & FK, NN, UQ & Chave estrangeira da tb\_pessoa            \\ \hline
+		Cod\_Hist\_Escolar     & SERIAL  & FK, NN     & Chave estrangeira da tb\_hist\_escolar     \\ \hline
+		Cod\_Exp\_Profissional & SERIAL  & FK         & Chave estrangeira  da tb\_exp\_profissional \\ \hline
+		Ind\_Ativo             & BOOLEAN & DEFAULT    & Indicador de estado do estudante                 \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Estudante}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos Empresa}
+	
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		Cod\_Empresa   & SERIAL      & PK      & Identificador único para a empresa      \\ \hline
+		Razao\_Social  & VARCHAR(50) & NN      & Razão social da empresa                 \\ \hline
+		Nome\_Fantasia & VARCHAR(50) &         & Nome fantasia da empresa                \\ \hline
+		CNPJ           & VARCHAR(20) & NN, UQ  & Cadastro Nacional de Pessoas Jurídicas  \\ \hline
+		Cod\_Endereco  & SERIAL      & FK, NN  & Chave estrangeira vinda da tb\_endereco \\ \hline
+		Ind\_Ativo     & BOOLEAN     & DEFAULT & Indicador de estado da empresa          \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Empresa}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos Representante rh}
+	
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+Cod\_Representante & SERIAL      & PK      & Identificador único                \\ \hline
+Cod\_Pessoa        & SERIAL      & FK, NN  & Chave estrangeira da tb\_pessoa                   \\ \hline
+Cod\_Empresa       & SERIAL      & FK      & Chave estrangeira da tb\_empresa                  \\ \hline
+Cargo              & VARCHAR(50) & NN      & Descrição do cargo do representante \\ \hline
+Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado do representante                    \\ \hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{Campos Representante rh}
+\end{quadro}
+
 
 \subsection{Endpoints da API}
 %Endpoints -> \Glspl{endpoint}
