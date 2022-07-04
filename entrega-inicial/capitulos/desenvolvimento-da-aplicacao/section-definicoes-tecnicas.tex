@@ -10,7 +10,7 @@ Está seção tem por objetivo demonstrar as modelagens e padronizações utiliz
 	\centering 
 	\caption{\label{fig:mer}Modelagem Entidade Relacionamento}
 	\includegraphics[width=\textwidth]{../imagens/Mer-estagiei.png} 
-	\fonte{Os autores}
+	\fonte{Os Autores}
 \end{figure}
 
 \subsection{Diagrama Entidade-Relacionamento}
@@ -19,11 +19,11 @@ Está seção tem por objetivo demonstrar as modelagens e padronizações utiliz
 	\centering 
 	\caption{\label{fig:der}Diagrama Entidade Relacionamento}
 	\includegraphics[width=\textwidth]{../imagens/der-estagiei.png} 
-	\fonte{Os autores}
+	\fonte{Os Autores}
 \end{figure}
 
 \subsection{Dicionário de Dados}
-A seguir mostramos as tabelas do nosso dicionário de dados.
+A seguir mostramos as tabelas do dicionário de dados.
 
 \begin{quadro}[H]
 	\caption{Legenda}
@@ -32,20 +32,20 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 		\hline
 		\thead{Sigla}	& \thead{Descrição}\\
 		\hline
-		PK			& Primary Key					\\
+		PK			&   \textit{Primary Key}		\\
 		\hline
-		FK		& Foregin Key			\\
+		FK		    &  \textit{ Foregin Key}		\\
 		\hline
-		NN			& Not Null			\\
-		\hline
-		
-		UQ			& Unique			\\
+		NN			&   \textit{Not Null}		\\
 		\hline
 		
-		CK			& Check			\\
+		UQ			&   \textit{Unique}			\\
 		\hline
 		
-		DEFAULT			& Default			\\
+		CK			&   \textit{Check}			\\
+		\hline
+		
+		DEFAULT		&   \textit{Default}			\\
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -59,26 +59,27 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 		\hline
 		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
 		\hline
-		Cod\_usuario & VARCHAR      & PK      & Identificador único para usuário         \\ \hline
-		Senha        & VARCHAR(50)  &         & Senha de acesso                          \\ \hline
-		Papel        & VARCHAR(25)  & DEFAULT & Papel de acesso do usuário no sistema    \\ \hline
-		Email        & VARCHAR(50)  &         & Email de acesso                          \\ \hline
-		Avatar       & VARCHAR(100) &         & Armazenamento de imagem do perfil Google \\ \hline
-		Ind\_Ativo   & BOOLEAN      & DEFAULT & Indicador de estado                      \\ \hline
+		Cod\_usuario    & VARCHAR      & PK      & Identificador único para usuário         \\ \hline
+		Senha           & VARCHAR(50)  &         & Senha de acesso                          \\ \hline
+		Papel           & VARCHAR(25)  & DEFAULT & Papel de acesso do usuário no sistema    \\ \hline
+		E-mail          & VARCHAR(50)  &         & E-mail de acesso                          \\ \hline
+		Avatar          & VARCHAR(100) &         & Armazenamento de imagem do perfil Google \\ \hline
+		Ind\_Ativo      & BOOLEAN      & DEFAULT & Indicador de estado                      \\ 
+		\hline
 	\end{tabular}
 	\fonte{Os Autores}
 	\label{Campos Usuário}
 \end{quadro}
-
-
 
 \begin{quadro}[H]
 	\caption{Campos Pessoa}
 	\centering
 	\begin{tabular}{| c | c | c | c |}
 		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
 		Cod\_Pessoa   & SERIAL      & PK      & Identificador único para pessoa         \\ \hline
-		Cod\_Endereco & SERIAL      & FK, NN  & Chave estrangeira vinda da tb\_endereco \\ \hline
+		Cod\_Endereco & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_endereco \\ \hline
 		Nome          & VARCHAR(50) & NN      & Nome                                    \\ \hline
 		Dt\_Nasc      & DATE        & NN      & Data de nascimento                      \\ \hline
 		RG            & VARCHAR(11) & NN      & Registro Geral                          \\ \hline
@@ -94,12 +95,14 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 	\centering
 	\begin{tabular}{| c | c | c | c |}
 		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
 		Cod\_Vaga     & SERIAL      & PK      & Indicador único                 \\ \hline
-		Cod\_Empresa  & SERIAL      & FK NN   & Chave estrangeira da tb\_empresa  \\ \hline
+		Cod\_Empresa  & SERIAL      & FK NN   & Chave estrangeira de tb\_empresa  \\ \hline
 		Descricao     & TEXT        &         & Descrição da vaga                       \\ \hline
 		Salario       & FLOAT(5)    &         & Remuneração da vaga                     \\ \hline
 		Titulo        & VARCHAR(30) &         & Titulo da vaga                          \\ \hline
-		Cod\_endereco & SERIAL      & FK NN   & Chave estrangeira da tb\_endereco \\ \hline
+		Cod\_endereco & SERIAL      & FK NN   & Chave estrangeira de tb\_endereco \\ \hline
 		Ind\_Ativo    & BOOLEAN     & DEFAULT & Indicador de estado da vaga             \\ \hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -111,10 +114,13 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 	\centering
 	\begin{tabular}{| c | c | c | c |}
 		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
 		Cod\_Curso  & SERIAL      & PK      & Identificador único\\ \hline
-		Descricao   & VARCHAR(50) & NN, UQ  & Descrição do curso                                            \\ \hline
+		Descricao   & VARCHAR(50) & NN, UQ  & Descrição do curso  \\ \hline
 		Tipo\_Curso & CHAR(1)     & NN      & Tipo do Curso) \\ \hline
-		Ind\_Ativo  & BOOLEAN     & DEFAULT & Indicador de estado da tb\_curso                              \\ \hline
+		Ind\_Ativo  & BOOLEAN     & DEFAULT & Indicador de estado de tb\_curso \\ 
+		\hline
 	\end{tabular}
 	\fonte{Os Autores}
 	\label{Campos Curso}
@@ -125,10 +131,12 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 	
 	\begin{tabular}{| c | c | c | c |}
 		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
 		Cod\_Estudante         & VARCHAR & PK         & Identificador único  \\ \hline
-		Cod\_Pessoa            & SERIAL  & FK, NN, UQ & Chave estrangeira da tb\_pessoa            \\ \hline
-		Cod\_Hist\_Escolar     & SERIAL  & FK, NN     & Chave estrangeira da tb\_hist\_escolar     \\ \hline
-		Cod\_Exp\_Profissional & SERIAL  & FK         & Chave estrangeira  da tb\_exp\_profissional \\ \hline
+		Cod\_Pessoa            & SERIAL  & FK, NN, UQ & Chave estrangeira de tb\_pessoa            \\ \hline
+		Cod\_Hist\_Escolar     & SERIAL  & FK, NN     & Chave estrangeira de tb\_hist\_escolar     \\ \hline
+		Cod\_Exp\_Profissional & SERIAL  & FK         & Chave estrangeira  de tb\_exp\_profissional \\ \hline
 		Ind\_Ativo             & BOOLEAN & DEFAULT    & Indicador de estado do estudante                 \\ \hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -140,11 +148,13 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 	
 	\begin{tabular}{| c | c | c | c |}
 		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
 		Cod\_Empresa   & SERIAL      & PK      & Identificador único para a empresa      \\ \hline
 		Razao\_Social  & VARCHAR(50) & NN      & Razão social da empresa                 \\ \hline
 		Nome\_Fantasia & VARCHAR(50) &         & Nome fantasia da empresa                \\ \hline
 		CNPJ           & VARCHAR(20) & NN, UQ  & Cadastro Nacional de Pessoas Jurídicas  \\ \hline
-		Cod\_Endereco  & SERIAL      & FK, NN  & Chave estrangeira vinda da tb\_endereco \\ \hline
+		Cod\_Endereco  & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_endereco \\ \hline
 		Ind\_Ativo     & BOOLEAN     & DEFAULT & Indicador de estado da empresa          \\ \hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -156,11 +166,13 @@ A seguir mostramos as tabelas do nosso dicionário de dados.
 	
 	\begin{tabular}{| c | c | c | c |}
 		\hline
-Cod\_Representante & SERIAL      & PK      & Identificador único                \\ \hline
-Cod\_Pessoa        & SERIAL      & FK, NN  & Chave estrangeira da tb\_pessoa                   \\ \hline
-Cod\_Empresa       & SERIAL      & FK      & Chave estrangeira da tb\_empresa                  \\ \hline
-Cargo              & VARCHAR(50) & NN      & Descrição do cargo do representante \\ \hline
-Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado do representante                    \\ \hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_Representante & SERIAL      & PK      & Identificador único                \\ \hline
+		Cod\_Pessoa        & SERIAL      & FK, NN  & Chave estrangeira de tb\_pessoa    \\ \hline
+		Cod\_Empresa       & SERIAL      & FK      & Chave estrangeira de tb\_empresa   \\ \hline
+		Cargo              & VARCHAR(50) & NN      & Descrição do cargo do representante \\ \hline
+		Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado do representante   \\ \hline
 	\end{tabular}
 	\fonte{Os Autores}
 	\label{Campos Representante rh}
@@ -168,16 +180,14 @@ Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado do representant
 
 
 \subsection{Endpoints da API}
-%Endpoints -> \Glspl{endpoint}
-%API -> \gls{api} ; APIs -> \glspl{api}
-A seguir listamos os \glspl{endpoint} mapeados até o momento, com seus respectivos métodos de requisição \gls{http}.
+A seguir listamos os \textit{\glspl{endpoint}} mapeados até o momento, com seus respectivos métodos de requisição \gls{http}.
 
 \begin{quadro}[H]
-	\caption{\Glspl{endpoint} da \gls{api}}
+	\caption{\textit{\Glspl{endpoint}} da \gls{api}}
 	\centering
 	\begin{tabular}{| c | c | c |}
 		\hline
-		\thead{Classe Java}	& \thead{Método}	& \thead{Endpoint}		\\
+		\thead{Classe Java}	& \thead{Método}	& \thead{\textit{Endpoint}}		\\
 		\hline
 		LoginController			& POST				& /api/loginEstudante	\\
 		\hline
@@ -192,7 +202,7 @@ A seguir listamos os \glspl{endpoint} mapeados até o momento, com seus respecti
 
 
 \subsection{Listagem das Competências}
-A seguir apresentamos as competências parametrizadas a fim de realizar a recomendação de vagas para os estudantes de acordo com seu perfil.
+A seguir apresentamos as competências parametrizadas a fim de realizar as recomendações de vagas para os estudantes de acordo com seu perfil.
 
 \begin{itemize}
 	\label{softskills}
@@ -203,7 +213,7 @@ A seguir apresentamos as competências parametrizadas a fim de realizar a recome
 	\item Boa escrita
 	\item Capacidade de resolver problemas
 	\item Capacidade de tomar decisões
-	\item Coaching
+	\item \textit{Coaching}
 	\item Colaboração
 	\item Comunicação
 	\item Conhecimento político e cultural
