@@ -3,130 +3,166 @@
 % ----------------------------------------------------------
 \section{Manutenibilidade}
 Para que a aplicação atinja um nível adequado de qualidade é fundamental
-que se estabeleça certos requisitos e parâmetros de manutenibilidade, tal como
+que se estabeleça certos requisitos e parâmetros de manutenibilidade, tais como
 ferramentas que facilitam esse processo. Através dos critérios estabelecidos, podemos
 medir o quanto o processo de desenvolvimento concorda com as boas práticas e incentivar o uso das mesmas.
 
 % ----------------------------------------------------------
 % LOGS
 % ----------------------------------------------------------
-\subsection{Logs}
+\subsection{\textit{Logs}}
 Para o monitoramento da aplicação em tempo de execução, essencialmente na camada de servidor,
-os \emph{logs} serão usados para monitorar o estado dos objetos. A ferramenta a ser utilizada
-será a implementação de \emph{logs} do \gls{spring boot} que utiliza a implementação \gls{logback}.
+os \textit{logs} serão usados para monitorar o estado dos objetos. A ferramenta a ser utilizada
+será a implementação de textit{logs} do \textit{\gls{spring boot}} que utiliza a implementação \textit{\gls{logback}}.
 A ferramenta permite diversos registros, como:
 
 \begin{itemize}
-    \item \emph{debug} 
-    \item \emph{info}
-    \item \emph{warn} 
-    \item \emph{error}
+    \item \textit{debug} 
+    \item \textit{info}
+    \item \textit{warn} 
+    \item \textit{error}
 \end{itemize}
 
-Assim, a cada bloco de falha da aplicação um \emph{log} será colocado para que os problemas sejam identificados,
+Assim, a cada bloco de falha da aplicação um \textit{log} será colocado para que os problemas sejam identificados,
 analisados e resolvidos.
 
 % ----------------------------------------------------------
 % CODE CONVENTION
 % ----------------------------------------------------------
-\subsection{Code Convention}
+\subsection{\textit{Code Convention}}
 Visando facilitar o entendimento mútuo entre a equipe, são feitas as convenções de código com o propósito de padronizar como os integrantes da equipe produzem seus respectivos códigos, de modo que o estilo de programação seja independente de seus autores.
 As convenções de código estabelecem estilos para a organização do código textualmente, ou seja, como os comentários são posicionados, nome de variáveis escolhidas.
 
 \subsubsection{Codificação geral}
-As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem}, de 1996. É comumente usada no desenvolvimento na linguagem java, e relativamente próxima do padrão adotado no JavaScript, podendo destacar os seguintes pontos:
+As convenções adotadas são baseadas na especificação da \gls{sunmicrosystem}, de 1996. É comumente usada no desenvolvimento na linguagem \textit{Java}, e relativamente próxima do padrão adotado no \textit{JavaScript}, podendo destacar os seguintes pontos:
 
 \begin{itemize}
     \item Minimização do uso de variáveis, funções e objetos globais.
     \item Declarações globais estarão de forma preferencial no início do arquivo.
     \item Declaração de variáveis próximo do ponto onde são inicializadas.
-    \item Indentação de 4 espaços no \gls{backend} e 2 espaços no \gls{frontend}.
+    \item Indentação de 4 espaços no\textit{ \gls{backend}} e 2 espaços no \textit{\gls{frontend}}.
     \item Classes e interfaces em \textbf{CamelCase} e substantivos.
     \item Métodos em \textbf{camelCase} e verbos.
     \item Constantes em \textbf{UPPER\_CASE}.
 \end{itemize}
 
-No \gls{backend} os pacotes serão bem divididos, tendo o pacote \emph{entity} para as entidades mapeadas do banco de dados, \emph{controller} para os \emph{controllers} e \glspl{endpoint} e \emph{service}, além de outros pacotes para fins de separação de código.
+No \textit{\gls{backend}} os pacotes são bem divididos, tendo o pacote \textit{entity} para as entidades mapeadas do banco de dados, \textit{controller} para os \textit{controllers} e \textit{\glspl{endpoint}} e \textit{service}, além de outros pacotes para fins de separação de código.
 
-\subsubsection{Commits}
-Para os commits dos repositórios de front e back-end estamos utilizando a convenção de usar prefixos que melhor identificam do que se trata aquele commit.
+\subsubsection{\textit{Commits}}
+Para os \textit{commits} dos repositórios de \textit{\gls{frontend}} e \textit{\gls{backend}} estamos utilizando a convenção de usar prefixos que melhor identificam do que se trata aquele \textit{commit}.
 
 São eles:
 \begin{itemize}
-	\item \textbf{fix:} correção de erros no código;
-	\item \textbf{feat:} introdução de uma nova funcionalidade;
+	\item \textbf{\textit{fix}:} correção de erros no código;
+	\item \textbf{\textit{feat}:} introdução de uma nova funcionalidade;
 \end{itemize}
 
-Além disso também realizamos a prática de realizar \emph{Pull Requests} ao invés de mandar as alterações diretamente no ramo principal do repositório.
+Além disso também realizamos a prática de realizar \textit{Pull Requests} ao invés de mandar as alterações diretamente no ramo principal do repositório.
 
 % ----------------------------------------------------------
 % DESIGN PATTERNS 
 % ----------------------------------------------------------
-\subsection{Design Patterns e boas práticas}
+\subsection{\textit{Design Patterns} e boas práticas}
 Para padrões de projetos, serão essencialmente utilizados 3 padrões muito utilizados pela comunidade de desenvolvimento: \emph{Factory Method}, \emph{Builder} e \emph{Facade}, além da possibilidade de usarmos outros conforme a necessidade.
 
-\subsubsection{Clean Code}
-O Clean Code é um conjunto de boas práticas de programação que visam melhorar o entendimento do código, para que facilite a leitura do mesmo. Algumas boas práticas principais listadas abaixo:
+\subsubsection{\textit{Clean Code}}
+O \textit{Clean Code} é um conjunto de boas práticas de programação que visam melhorar o entendimento do código, facilitando a leitura do mesmo. Algumas das prinipais boas práticas são listadas a seguir:
 
 \begin{itemize}
     \item Nomes significativos para as variáveis, classes, métodos, atributos e objetos.
-    \item Utilização de constantes e enums para evitar números mágicos.
-    \item Evitar comentários que são redundantes e podem ser convertidos em códigos
-    \item Utilização de funções pequenas, com uma única responsabilidade abstrata
+    \item Utilização de constantes e \textit{enums} para evitar números mágicos.
+    \item Evitar comentários que são redundantes e podem ser convertidos em códigos.
+    \item Utilização de funções pequenas, com uma única responsabilidade abstrata.
     \item Evitar booleanos de forma explícita.
-    \item Diminuir a redundância e a repetição de código (Don't Repeat Yourself).
-    \item Aumentar a ortogonalidade do código, diminuindo as dependências e o aumentando o desacoplamento e a independência entre os módulos, de modo a de deixa-lo mais fácil de mudar (Easy To Change).
+    \item Diminuir a redundância e a repetição de código (\textit{Don't Repeat Yourself}).
+    \item Aumentar a ortogonalidade do código: diminuindo as dependências; aumentando o desacoplamento e a independência entre os módulos de modo a deixá-los mais fáceis de serem modificados (\textit{Easy To Change}).
 \end{itemize}
 
-\subsubsection{SOLID}
+\subsubsection{\textit{SOLID}}
 
-O SOLID é um acrônimo para 5 princípios da programação orientada a objetos, fundamental para o desenvolvimento e manutenção de software, visto que traz uma facilidade e flexibilidade no código em se adequar a mudanças, frequente no desenvolvimento.
+O \textit{SOLID} é um acrônimo para 5 (cinco) princípios da programação orientada a objetos, tais princípios são fundamentais para o desenvolvimento e manutenção de software, visto que trazem facilidade e flexibilidade no código em se adequar à mudanças, algo frequente no desenvolvimento. Os princípios do \textit{SOLID} estão expostos no \autoref{solid}.
 
-\begin{itemize}
-    \item \underline{Single Responsiblity Principle}: Uma classe deve ter apenas um motivo para mudar.
-    \item \underline{Open-Closed Principle}: Uma classe deve estar aberta para extensão, e fechada para modificação, recomendando sempre utilizar a herança e não modificar o código-fonte original.
-    \item \underline{Liskov Substitution Principle}: Uma classe derivada deve ser substituível por sua classe base.
-    \item \underline{Interface Segregation Principle}: Utilizar muitas interfaces específicas é melhor que uma interface genérica.
-    \item \underline{Dependency Inversion Principle}: Dependa de abstrações e não de implementações.
-\end{itemize}
+\begin{quadro}[H]
+	\caption{\textit{SOLID Principles}}
+	\centering
+	\begin{tabular}{| l | p{0.6\linewidth}|}
+		\hline
+		\thead[l]{Princípio} & \thead[l]{Descrição}\\
+		\hline
+		\textit{Single Responsiblity Principle} 	& Uma classe deve ter apenas um motivo para mudar.\\
+		\hline
+		\textit{Open-Closed Principle}				& Uma classe deve estar aberta para extensão e fechada para modificação, recomendando sempre utilizar a herança e não modificar o código-fonte original.\\
+		\hline
+		\textit{Liskov Substitution Principle}		& Uma classe derivada deve ser substituível por sua classe base.\\
+		\hline
+		\textit{Interface Segregation Principle}	& Utilizar muitas interfaces específicas é melhor que uma interface genérica.\\
+		\hline
+		\textit{Dependency Inversion Principle}		& Dependa de abstrações e não de implementações. \\
+		\hline
+	\end{tabular}
+	\fonte{\cite{solidprinciples}}
+	\label{solid}
+\end{quadro}
 
-\subsubsection{12 Factor App}
+\subsubsection{\textit{12 Factor App}}
 
-A aplicação doze-fatores é uma metodologia para construir softwares como serviço que seguem os seguintes parâmetros:
+A aplicação doze-fatores é uma metodologia para construir softwares como serviço que seguem os parâmetros expostos no \autoref{12-factor}.
 
-\begin{itemize}
-    \item \underline{Base de Código}: Uma base de código com rastreamento utilizando controle de revisão, muitos \glspl{deploy}.
-    \item \underline{Dependências}: Declare e isole as dependências.
-    \item \underline{Configurações}: Armazene as configurações no ambiente.
-    \item \underline{Serviços de Apoio}: Trate os serviços de apoio, como recursos ligados.
-    \item \underline{Construa, lance, execute}: Separe estritamente os builds e execute em estágios.
-    \item \underline{Processos}: Execute a aplicação como um ou mais processos que não armazenam estado.
-    \item \underline{Vínculo de porta}: Exporte serviços por ligação de porta.
-    \item \underline{Concorrência}: Dimensione por um modelo de processo.
-    \item \underline{Descartabilidade}: Maximizar a robustez com inicialização e desligamento rápido.
-    \item \underline{Dev/prod semelhantes}: Mantenha o desenvolvimento, teste, produção o mais semelhante possível.
-    \item \underline{Logs}: Trate logs como fluxo de eventos.
-    \item \underline{Processos de Admin}: Executar tarefas de administração/gerenciamento como processos pontuais.
-\end{itemize}
+\begin{quadro}[H]
+	\caption{\textit{12 Factor App parameters}}
+	\centering
+	\begin{tabular}{| l | p{0.6\linewidth}|}
+		\hline
+		\thead[l]{Parâmetros} & \thead[l]{Descrição}\\
+		\hline
+		Base de Código 	& Uma base de código com rastreamento utilizando controle de revisão, muitos \textit{\glspl{deploy}}.\\
+		\hline
+		Dependências	& Declare e isole as dependências.\\
+		\hline
+		Configurações	& Armazene as configurações no ambiente.\\
+		\hline
+		Serviços de Apoio	& Trate os serviços de apoio, como recursos ligados.\\
+		\hline
+		Construa, lance, execute & Separe estritamente os \textit{builds} e execute em estágios.\\
+		\hline
+		 Processos & Execute a aplicação como um ou mais processos que não armazenam estado.\\
+		\hline
+		Vínculo de porta & Exporte serviços por ligação de porta.\\
+		\hline
+		Concorrência & Dimensione por um modelo de processo.\\
+		\hline
+		Descartabilidade & Maximizar a robustez com inicialização e desligamento rápido.\\
+		\hline
+		\textit{Dev/prod} semelhantes & Mantenha o desenvolvimento, teste, produção o mais semelhante possível. \\
+		\hline
+		\textit{Logs} & Trate logs como fluxo de eventos.\\
+		\hline
+		Processos de \textit{Admin} & Executar tarefas de administração/gerenciamento como processos pontuais.\\
+		\hline
+	\end{tabular}
+	\fonte{\cite{12factor}}
+	\label{12-factor}
+\end{quadro}
 
 % ----------------------------------------------------------
 % INTEGRAÇÃO CONTINUA
 % ----------------------------------------------------------
 \subsection{Integração continua}
-Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \gls{backend} em produção. O mesmo foi feito com o \gls{netlify} em relação ao \gls{frontend}.
-\subsubsection{Back-end}
+Para manter o serviço sempre atualizado para o usuário, a ferramenta de integração contínua do \gls{herokuci} foi selecionada para a implantação da aplicação no \textit{\gls{backend}} em produção. O mesmo foi feito com o \textit{\gls{netlify}} em relação ao\textit{ \gls{frontend}}.
+\subsubsection{\textit{Back-end}}
+
 \begin{enumerate}
     \item Após uma mudança do código no \gls{github}, uma instância da \gls{herokuci} que tem acesso ao código do \gls{github}, identifica automaticamente
     a linguagem do código; 
-    \item No momento do \emph{\gls{deploy}} a \gls{herokuci} constrói o código e da \emph{\gls{deploy}} em uma aplicação temporária.
+    \item No momento do \textit{\gls{deploy}} a \gls{herokuci} constrói o código e da \textit{\gls{deploy}} em uma aplicação temporária.
     \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
-    \item Após a \emph{build} passar nos testes com sucesso é feito o \emph{\gls{deploy}} da aplicação 
+    \item Após a \textit{build} passar nos testes com sucesso é feito o \textit{\gls{deploy}} da aplicação 
 \end{enumerate} 
 
-A implantação dos itens acima se deu por meio das \emph{Actions} do \gls{github}.
+A implantação dos itens acima se deu por meio das \textit{Actions} do \gls{github}.
 
 \begin{figure}[htb]
-	\caption{\label{qr-url-back}URL do \emph{Actions} do \gls{backend}}
+	\caption{\label{qr-url-actions-back}URL do \textit{Actions} do \textit{\gls{backend}}}
 	\begin{center}
 		\geraQRCode{https://github.com/EquipeWeCode/estagiei-backend/blob/develop/.github/workflows/deploy-develop.yml}
 		\legend{\url{https://github.com/EquipeWeCode/estagiei-backend/blob/develop/.github/workflows/deploy-develop.yml}}
@@ -134,16 +170,16 @@ A implantação dos itens acima se deu por meio das \emph{Actions} do \gls{githu
 	\end{center}
 \end{figure}
 
-\subsubsection{Front-end}
+\subsubsection{\textit{Front-end}}
 \begin{enumerate}
-    \item Após uma mudança do código no \gls{github}, uma instância da \gls{netlify} que tem acesso ao código do \gls{github} identifica automaticamente essa mudança.
+    \item Após uma mudança do código no \gls{github}, uma instância da \textit{\gls{netlify}} que tem acesso ao código do \gls{github} identifica automaticamente essa mudança.
     \item Essas mudanças passam por testes, cujos resultados são mostrados ao usuário através de uma interface.
-    \item Após passar nos testes com sucesso é feito o \emph{\gls{deploy}} da aplicação 
+    \item Após passar nos testes com sucesso é feito o \textit{\gls{deploy}} da aplicação 
 \end{enumerate} 
 
-A implantação dos itens acima se deu por meio das \emph{Actions} do \gls{github}.
+A implantação dos itens acima se deu por meio das \textit{Actions} do \gls{github}.
 \begin{figure}[htb]
-	\caption{\label{qr-url-back}URL do \emph{Actions} do \gls{frontend}}
+	\caption{\label{qr-url-actions-front}URL do \textit{Actions} do \textit{\gls{frontend}}}
 	\begin{center}
 		\geraQRCode{https://github.com/EquipeWeCode/estagiei-frontend/blob/develop/.github/workflows/main.yml}
 		\legend{\url{https://github.com/EquipeWeCode/estagiei-frontend/blob/develop/.github/workflows/main.yml}}
