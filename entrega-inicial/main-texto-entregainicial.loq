@@ -8,11 +8,14 @@
 \contentsline {quadro}{\numberline {8}{\ignorespaces \textit {SOLID Principles}}}{43}{quadro.4.8}%
 \contentsline {quadro}{\numberline {9}{\ignorespaces \textit {12 Factor App parameters}}}{44}{quadro.4.9}%
 \contentsline {quadro}{\numberline {10}{\ignorespaces Legenda}}{51}{quadro.4.10}%
-\contentsline {quadro}{\numberline {11}{\ignorespaces Campos Usuário}}{51}{quadro.4.11}%
-\contentsline {quadro}{\numberline {12}{\ignorespaces Campos Pessoa}}{51}{quadro.4.12}%
-\contentsline {quadro}{\numberline {13}{\ignorespaces Campos Vaga}}{52}{quadro.4.13}%
-\contentsline {quadro}{\numberline {14}{\ignorespaces Campos Curso}}{52}{quadro.4.14}%
-\contentsline {quadro}{\numberline {15}{\ignorespaces Campos Estudante}}{52}{quadro.4.15}%
-\contentsline {quadro}{\numberline {16}{\ignorespaces Campos Empresa}}{52}{quadro.4.16}%
-\contentsline {quadro}{\numberline {17}{\ignorespaces Campos Representante rh}}{53}{quadro.4.17}%
-\contentsline {quadro}{\numberline {18}{\ignorespaces \textit {\Glspl {endpoint}} da \gls {api}}}{53}{quadro.4.18}%
+\contentsline {quadro}{\numberline {11}{\ignorespaces Campos de Usuário}}{51}{quadro.4.11}%
+\contentsline {quadro}{\numberline {12}{\ignorespaces Campos de Pessoa}}{51}{quadro.4.12}%
+\contentsline {quadro}{\numberline {13}{\ignorespaces Campos de Vaga}}{52}{quadro.4.13}%
+\contentsline {quadro}{\numberline {14}{\ignorespaces Campos de Curso}}{52}{quadro.4.14}%
+\contentsline {quadro}{\numberline {15}{\ignorespaces Campos de Estudante}}{52}{quadro.4.15}%
+\contentsline {quadro}{\numberline {16}{\ignorespaces Campos de Empresa}}{53}{quadro.4.16}%
+\contentsline {quadro}{\numberline {17}{\ignorespaces Campos de Representante RH}}{53}{quadro.4.17}%
+\contentsline {quadro}{\numberline {18}{\ignorespaces \textit {\Glspl {endpoint}} de Estudante}}{53}{quadro.4.18}%
+\contentsline {quadro}{\numberline {19}{\ignorespaces \textit {\Glspl {endpoint}} de Vaga}}{54}{quadro.4.19}%
+\contentsline {quadro}{\numberline {20}{\ignorespaces \textit {\Glspl {endpoint}} de Empresa}}{54}{quadro.4.20}%
+\contentsline {quadro}{\numberline {21}{\ignorespaces \textit {\Glspl {endpoint}} de Competência}}{54}{quadro.4.21}%

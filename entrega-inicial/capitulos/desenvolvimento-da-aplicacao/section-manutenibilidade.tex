@@ -152,17 +152,17 @@ Para manter o serviço sempre atualizado para o usuário, a ferramenta de integr
 \subsubsection{\textit{Back-end}}
 
 \begin{enumerate}
-    \item Após uma mudança do código no \gls{github}, uma instância da \gls{herokuci} que tem acesso ao código do \gls{github}, identifica automaticamente
-    a linguagem do código; 
-    \item No momento do \textit{\gls{deploy}} a \gls{herokuci} constrói o código e da \textit{\gls{deploy}} em uma aplicação temporária.
-    \item Essa aplicação passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface.
-    \item Após a \textit{build} passar nos testes com sucesso é feito o \textit{\gls{deploy}} da aplicação 
+	\item Uma mudança é feita no código do \textit{\gls{backend}} e enviada ao repositório no \gls{github};
+    \item Após a mudança do código no repositório, uma instância da \gls{herokuci}, identifica automaticamente a linguagem de programação usada; 
+    \item O processo do \textit{\gls{deploy}} é iniciado e a \gls{herokuci} constrói o código em uma aplicação temporária;
+    \item A aplicação temporária passa por testes paralelos, cujos resultados são mostrados ao usuário através de uma interface;
+    \item Caso a aplicação temporária construída passe pelos testes com sucesso, é feito o \textit{\gls{deploy}} da aplicação na plataforma de hospedagem, no caso sendo o \gls{heroku}.
 \end{enumerate} 
 
-A implantação dos itens acima se deu por meio das \textit{Actions} do \gls{github}.
+A implantação dos itens acima se deu por meio de \textit{Actions} do \gls{github}.
 
 \begin{figure}[htb]
-	\caption{\label{qr-url-actions-back}URL do \textit{Actions} do \textit{\gls{backend}}}
+	\caption{\label{qr-url-actions-back}URL de \textit{Actions} do \textit{\gls{backend}}}
 	\begin{center}
 		\geraQRCode{https://github.com/EquipeWeCode/estagiei-backend/blob/develop/.github/workflows/deploy-develop.yml}
 		\legend{\url{https://github.com/EquipeWeCode/estagiei-backend/blob/develop/.github/workflows/deploy-develop.yml}}
@@ -172,14 +172,15 @@ A implantação dos itens acima se deu por meio das \textit{Actions} do \gls{git
 
 \subsubsection{\textit{Front-end}}
 \begin{enumerate}
-    \item Após uma mudança do código no \gls{github}, uma instância da \textit{\gls{netlify}} que tem acesso ao código do \gls{github} identifica automaticamente essa mudança.
-    \item Essas mudanças passam por testes, cujos resultados são mostrados ao usuário através de uma interface.
-    \item Após passar nos testes com sucesso é feito o \textit{\gls{deploy}} da aplicação 
+	\item Uma mudança é feita no código do \textit{\gls{frontend}} e enviada ao repositório no \gls{github};
+    \item Após uma mudança do código no \gls{github}, uma instância da \textit{\gls{netlify}}, que tem acesso ao código do \gls{github}, identifica automaticamente essa mudança;
+    \item O novo código passa por testes, cujos resultados são mostrados ao usuário através de uma interface;
+    \item Após passar nos testes com sucesso, é feito o \textit{\gls{deploy}} da aplicação na plataforma de hospedagem, no caso sendo o \textit{\gls{netlify}}.
 \end{enumerate} 
 
-A implantação dos itens acima se deu por meio das \textit{Actions} do \gls{github}.
+A implantação dos itens acima se deu por meio de \textit{Actions} do \gls{github}.
 \begin{figure}[htb]
-	\caption{\label{qr-url-actions-front}URL do \textit{Actions} do \textit{\gls{frontend}}}
+	\caption{\label{qr-url-actions-front}URL de \textit{Actions} do \textit{\gls{frontend}}}
 	\begin{center}
 		\geraQRCode{https://github.com/EquipeWeCode/estagiei-frontend/blob/develop/.github/workflows/main.yml}
 		\legend{\url{https://github.com/EquipeWeCode/estagiei-frontend/blob/develop/.github/workflows/main.yml}}
