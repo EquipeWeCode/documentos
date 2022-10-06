@@ -1,21 +1,25 @@
 \contentsline {quadro}{\numberline {1}{\ignorespaces Comparação dos aplicativos concorrentes}}{10}{quadro.1.1}%
 \contentsline {quadro}{\numberline {2}{\ignorespaces Divisão de responsabilidades da equipe.}}{14}{quadro.3.2}%
-\contentsline {quadro}{\numberline {3}{\ignorespaces Cronograma de \glspl {sprint}}}{17}{quadro.3.3}%
-\contentsline {quadro}{\numberline {4}{\ignorespaces Requisitos funcionais}}{37}{quadro.4.4}%
-\contentsline {quadro}{\numberline {5}{\ignorespaces Requisitos não funcionais}}{37}{quadro.4.5}%
-\contentsline {quadro}{\numberline {6}{\ignorespaces Regras de negócio}}{38}{quadro.4.6}%
-\contentsline {quadro}{\numberline {7}{\ignorespaces Histórias de usuário}}{38}{quadro.4.7}%
-\contentsline {quadro}{\numberline {8}{\ignorespaces \textit {SOLID Principles}}}{43}{quadro.4.8}%
-\contentsline {quadro}{\numberline {9}{\ignorespaces \textit {12 Factor App parameters}}}{44}{quadro.4.9}%
-\contentsline {quadro}{\numberline {10}{\ignorespaces Legenda}}{51}{quadro.4.10}%
-\contentsline {quadro}{\numberline {11}{\ignorespaces Campos de Usuário}}{51}{quadro.4.11}%
-\contentsline {quadro}{\numberline {12}{\ignorespaces Campos de Pessoa}}{51}{quadro.4.12}%
-\contentsline {quadro}{\numberline {13}{\ignorespaces Campos de Vaga}}{52}{quadro.4.13}%
-\contentsline {quadro}{\numberline {14}{\ignorespaces Campos de Curso}}{52}{quadro.4.14}%
-\contentsline {quadro}{\numberline {15}{\ignorespaces Campos de Estudante}}{52}{quadro.4.15}%
-\contentsline {quadro}{\numberline {16}{\ignorespaces Campos de Empresa}}{53}{quadro.4.16}%
-\contentsline {quadro}{\numberline {17}{\ignorespaces Campos de Representante RH}}{53}{quadro.4.17}%
-\contentsline {quadro}{\numberline {18}{\ignorespaces \textit {\Glspl {endpoint}} de Estudante}}{53}{quadro.4.18}%
-\contentsline {quadro}{\numberline {19}{\ignorespaces \textit {\Glspl {endpoint}} de Vaga}}{54}{quadro.4.19}%
-\contentsline {quadro}{\numberline {20}{\ignorespaces \textit {\Glspl {endpoint}} de Empresa}}{54}{quadro.4.20}%
-\contentsline {quadro}{\numberline {21}{\ignorespaces \textit {\Glspl {endpoint}} de Competência}}{54}{quadro.4.21}%
+\contentsline {quadro}{\numberline {3}{\ignorespaces Cronograma de \glspl {sprint} - 1º semestre}}{17}{quadro.3.3}%
+\contentsline {quadro}{\numberline {4}{\ignorespaces Cronograma de \glspl {sprint} - 2º semestre}}{20}{quadro.3.4}%
+\contentsline {quadro}{\numberline {5}{\ignorespaces Requisitos funcionais}}{40}{quadro.4.5}%
+\contentsline {quadro}{\numberline {6}{\ignorespaces Requisitos não funcionais}}{41}{quadro.4.6}%
+\contentsline {quadro}{\numberline {7}{\ignorespaces Regras de negócio}}{41}{quadro.4.7}%
+\contentsline {quadro}{\numberline {8}{\ignorespaces Histórias de usuário - Empresa}}{42}{quadro.4.8}%
+\contentsline {quadro}{\numberline {9}{\ignorespaces Histórias de usuário - Estudante}}{43}{quadro.4.9}%
+\contentsline {quadro}{\numberline {10}{\ignorespaces Histórias de usuário - Administrador}}{44}{quadro.4.10}%
+\contentsline {quadro}{\numberline {11}{\ignorespaces Casos de uso}}{45}{quadro.4.11}%
+\contentsline {quadro}{\numberline {12}{\ignorespaces \textit {SOLID Principles}}}{49}{quadro.4.12}%
+\contentsline {quadro}{\numberline {13}{\ignorespaces \textit {12 Factor App parameters}}}{50}{quadro.4.13}%
+\contentsline {quadro}{\numberline {14}{\ignorespaces Legenda}}{57}{quadro.4.14}%
+\contentsline {quadro}{\numberline {15}{\ignorespaces Campos de Usuário}}{57}{quadro.4.15}%
+\contentsline {quadro}{\numberline {16}{\ignorespaces Campos de Pessoa}}{57}{quadro.4.16}%
+\contentsline {quadro}{\numberline {17}{\ignorespaces Campos de Vaga}}{58}{quadro.4.17}%
+\contentsline {quadro}{\numberline {18}{\ignorespaces Campos de Curso}}{58}{quadro.4.18}%
+\contentsline {quadro}{\numberline {19}{\ignorespaces Campos de Estudante}}{58}{quadro.4.19}%
+\contentsline {quadro}{\numberline {20}{\ignorespaces Campos de Empresa}}{59}{quadro.4.20}%
+\contentsline {quadro}{\numberline {21}{\ignorespaces Campos de Representante RH}}{59}{quadro.4.21}%
+\contentsline {quadro}{\numberline {22}{\ignorespaces \textit {\Glspl {endpoint}} de Estudante}}{59}{quadro.4.22}%
+\contentsline {quadro}{\numberline {23}{\ignorespaces \textit {\Glspl {endpoint}} de Vaga}}{60}{quadro.4.23}%
+\contentsline {quadro}{\numberline {24}{\ignorespaces \textit {\Glspl {endpoint}} de Empresa}}{60}{quadro.4.24}%
+\contentsline {quadro}{\numberline {25}{\ignorespaces \textit {\Glspl {endpoint}} de Competência}}{60}{quadro.4.25}%
