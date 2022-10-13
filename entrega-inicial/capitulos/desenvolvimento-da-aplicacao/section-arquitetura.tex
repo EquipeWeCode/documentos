@@ -2,9 +2,11 @@
 % ARQUITETURA
 % ----------------------------------------------------------
 \section{Arquitetura}
-Para o desenvolvimento do projeto, e tendo em vista que seria construída uma aplicação \textit{web} de página única, utilizamos de ferramentas que cerceiam o ecossistema de \ac{spa}. Para isso, temos a divisão do projeto em \textit{\gls{frontend}} e \textit{\gls{backend}} de modo que eles se comuniquem via protocolo \ac{http} com requisições e respostas no formato \ac{json}. Para o desenvolvimento do \textit{\gls{frontend}} utilizamos \textit{\gls{typescript}} por meio da biblioteca \gls{react}; o \textit{\gls{backend}} está sendo desenvolvido utilizando Java com o micro \textit{\gls{framework}} \textit{\gls{spring boot}}.
+Para o desenvolvimento do projeto, e tendo em vista que seria construída uma aplicação \textit{web} de página única, utilizamos de ferramentas que cerceiam o ecossistema de \ac{spa}. Para isso, temos a divisão do projeto em \textit{\gls{frontend}} e \textit{\gls{backend}} de modo que eles se comunicam via protocolo \ac{http} com requisições e respostas no formato \ac{json}. Para o desenvolvimento do \textit{\gls{frontend}} utilizamos \textit{\gls{typescript}} por meio da biblioteca \gls{react}; o \textit{\gls{backend}} foi desenvolvido utilizando Java com o micro \textit{\gls{framework}} \textit{\gls{spring boot}}.
 
 Em relação ao \textit{\gls{deploy}} das aplicações, o \textit{\gls{frontend}} está hospedado na plataforma \textit{\gls{netlify}}, que hospeda e mantém um site com implantação contínua e HTTPS, proporcionando uma melhor agilidade de desenvolvimento, enquanto o \textit{\gls{backend}} está hospedado no \gls{heroku}, que é uma plataforma como serviço de fácil manuseio e que permite a equipe ter um maior foco no desenvolvimento do projeto. Através do \gls{heroku} podemos também fazer a utilização do \gls{postgre} por meio do serviço de apoio \gls{heroku} Postgres.
+
+Ademais, para o armazenamento de objetos como arquivos ou imagens, utilizamos a plataforma Cloudinary, principalmente por sua fácil integração com a linguagem de programação Java através de bibliotecas.
 
 \subsection{Diagramas de arquitetura}
 Os diagramas \autoref{fig-arq-app}, \autoref{fig-arq-tec} e \autoref{fig-arq-negocio} ilustram de modo geral a arquitetura planejada e implementada para a solução proposta, utilizando das tecnologias já citadas.
@@ -14,16 +16,16 @@ A \autoref{fig-arq-app} ilustra a aplicação construída seguindo o ecossistema
 \begin{figure}[H]
 	\centering
 	\caption{\label{fig-arq-app}Arquitetura de Aplicação}
-	\includegraphics[width=0.95\textwidth]{../imagens/arq-proj-arq-app2.png}
+	\includegraphics[width=0.95\textwidth]{../imagens/arq-proj-arq-app3.png}
 	\fonte{Os Autores}
 \end{figure}
 
-A \autoref{fig-arq-tec} ilustra a mesma arquitetura, porém dando destaque para as tecnologias utilizadas tanto para hospedagem, desenvolvimento e versionamento.
+A \autoref{fig-arq-tec} ilustra a mesma arquitetura, porém dando destaque para as tecnologias utilizadas tanto para hospedagem quanto desenvolvimento e versionamento.
 
 \begin{figure}[H]
 	\centering
 	\caption{\label{fig-arq-tec}Arquitetura Tecnológica}
-	\includegraphics[width=0.95\textwidth]{../imagens/arq-proj-arq-tec3.png}
+	\includegraphics[width=0.95\textwidth]{../imagens/arq-proj-arq-tec4.png}
 	\fonte{Os Autores}
 \end{figure}
 
