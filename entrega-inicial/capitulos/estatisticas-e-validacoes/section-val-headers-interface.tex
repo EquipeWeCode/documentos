@@ -1,10 +1,7 @@
 % ----------------------------------------------------------
 % VALIDAÇÕES DE SEGURANÇA, INTERFACE E CÓDIGO
 % ----------------------------------------------------------
-\section{Validações de segurança, interface e código}
-Nessa seção são abordadas algumas validações que fizemos na nossa aplicação e a justificativa delas.
-
-\subsection{Teste dos \textit{headers} da API}
+\section{Teste dos \textit{headers} da API}
 Para os testes de \textit{headers} de segurança, foi usado o site \textit{\gls{secheaders}}, onde é possível verificar em qual nota se enquadrava a \ac{api} do projeto. Foram feitos testes de um dos nossos \textit{\glspl{endpoint}} (O resultado é o mesmo para todos), e durante o primeiro teste, o site indicou que nota F, pela resposta da aplicação não conter nenhum \textit{header} de segurança, então com base nesse resultado, foram adicionadas as dependências que faltavam e assim, foi possível subir a nota, como demonstra a \autoref{sec-headers}.
 
 \begin{figure}[H]
@@ -23,7 +20,7 @@ Para os testes de \textit{headers} de segurança, foi usado o site \textit{\gls{
 	\end{center}
 \end{figure}
 
-\subsection{Teste de \ac{tls} do \textit{\gls{frontend}}}
+\section{Teste de \ac{tls} do \textit{\gls{frontend}}}
 O sistema \emph{EstagiEI} também foi testado com relação ao certificado \ac{tls}, que indica se um site utiliza o protocolo \ac{https} ou não. Devido a aplicação estar hospedada no \textit{\gls{netlify}}, ele automaticamente já providencia um certificado com o \textit{\gls{letsencrypt}} quando é criado um domínio personalizado. Assim como mostra a \autoref{grade-server-test}, a aplicação possui um certificado \ac{tls} ativo.
 
 \begin{figure}[H]
@@ -42,7 +39,7 @@ O sistema \emph{EstagiEI} também foi testado com relação ao certificado \ac{t
 	\end{center}
 \end{figure}
 
-\subsection{Teste de desempenho do \textit{\gls{frontend}}}
+\section{Teste de desempenho do \textit{\gls{frontend}}}
 Através da extensão \textit{\gls{lighthouse}}, foi verificado como estava o desempenho, acessibilidade, etc. Da tela de login, e foi percebido pontos a serem melhorados, principalmente na questão do desempenho. Pontos esses que serão ajustados no próximo semestre. A \autoref{lighthouse-test} ilustra o resultado.
 
 \begin{figure}[H]
@@ -52,7 +49,7 @@ Através da extensão \textit{\gls{lighthouse}}, foi verificado como estava o de
 	\fonte{Os Autores.}
 \end{figure}
 
-\subsection{Análise de código}
+\section{Análise de código}
 Fizemos também uma verificação no nosso código, tanto no \textit{\gls{frontend}} como no \textit{\gls{backend}}, e o resultado foi relativamente satisfatório, faltando apenas alguns pontos que serão melhorados ao longo do tempo. As figuras \autoref{better-code-front} e \autoref{better-code-back} demonstram os resultados do \textit{\gls{frontend}} e \textit{\gls{backend}} respectivamente.
 
 \begin{figure}[H]
@@ -69,7 +66,7 @@ Fizemos também uma verificação no nosso código, tanto no \textit{\gls{fronte
 	\fonte{Os Autores.}
 \end{figure}
 
-\subsection{Validador \ac{html}}
+\section{Validador \ac{html}}
 Foi feito também uma verificação no \ac{html} do \textit{\gls{frontend}}. A \autoref{validador-html} demonstra o resultado.
 
 \begin{figure}[H]
