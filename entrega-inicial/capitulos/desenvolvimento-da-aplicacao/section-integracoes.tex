@@ -1,13 +1,11 @@
 \section{Integrações}
-Nessa seção são citadas as possíveis integrações que a aplicação terá, que foram decididas baseadas em outras aplicações do mercado.
+Nessa seção apresentamos as integrações elencadas como sendo possíveis e/ou desejáveis para a aplicação, que foram pensadas com base em outras aplicações do mercado.
 
 \subsection{Login com o Google e LinkedIn}
-Levando em conta a experiência de usuário, a aplicação terá a opção do estudante se logar através do \ac{sso} dessas empresas. Dessa forma, não será necessário digitar a senha toda vez que o usuário for usar o sistema, precisando apenas clicar um botão e fazer o \textit{login} em uma dessas alternativas.
+Levando em conta a experiência de usuário, consideramos colocar a opção do estudante se logar através do \ac{sso} dessas empresas. Dessa forma, não seria necessário digitar a senha toda vez que o usuário for usar o sistema, precisando apenas clicar em um botão e fazer o \textit{login} com uma dessas alternativas. Contudo, como as empresas e seus representantes usam um sistema de cadastro e login próprio da nossa aplicação, tornou-se complexo manter mais de uma forma de acesso para o sistema, assim, optamos por não dar continuidade com essa integração.
 
-Como citado em \autoref{entrega-poc}, a integração com o \textit{login} da empresa \textit{Google} já foi implementado.
-
-\subsection{Entrar em contato via \textit{Whatsapp}}
-A aplicação terá, também, uma forma da empresa contatar o estudante via \textit{Whatsapp}. Essa integração será feita via \ac{api} disponibilizada pela própria empresa que mantém o aplicativo. Dessa forma, com apenas um clique, será possível enviar uma mensagem diretamente ao estudante.
+\subsection{Entrar em contato via \textit{WhatsApp}}
+A aplicação teria uma forma da empresa contatar o estudante via \textit{WhatsApp}. Essa integração seria feita via \ac{api} disponibilizada pela própria empresa que mantém o aplicativo. Dessa forma, com apenas um clique, seria possível enviar uma mensagem diretamente ao estudante. No entanto, a \ac{api} do \textit{WhatsApp} é exclusiva para parceiros, assim esta integração só poderá ser implementada no futuro.
 
 \subsection{Acessibilidade com VLibras}
 A Lei Brasileira de Inclusão, Art. 63, estipula que os sites devem ser acessíveis de modo a garantir o acesso às informações disponíveis \cite{leiinclusao}, assim, realizaremos a integração com a aplicação \gls{vlibras}, que é um tradutor de texto escrito em Português para \ac{libras}. De acordo com o manual do \gls{vlibras}, esta integração pode ser realizada com a inclusão de um trecho de código na página \ac{html} da aplicação \cite{manualvlibras}.
