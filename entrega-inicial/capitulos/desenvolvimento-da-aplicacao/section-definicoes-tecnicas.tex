@@ -9,7 +9,7 @@ Esta seção tem por objetivo demonstrar as modelagens e padronizações utiliza
 \begin{figure}[H]
 	\centering 
 	\caption{\label{fig:mer}Modelagem Entidade Relacionamento}
-	\includegraphics[width=\textwidth]{../imagens/Mer-estagiei.png} 
+	\includegraphics[width=\textwidth]{../imagens/mer-estagiei-2.png} 
 	\fonte{Os Autores}
 \end{figure}
 
@@ -18,12 +18,12 @@ Esta seção tem por objetivo demonstrar as modelagens e padronizações utiliza
 \begin{figure}[H]
 	\centering 
 	\caption{\label{fig:der}Diagrama Entidade Relacionamento}
-	\includegraphics[width=\textwidth]{../imagens/der-estagiei.png} 
+	\includegraphics[width=\textwidth]{../imagens/der-estagiei-2.png} 
 	\fonte{Os Autores}
 \end{figure}
 
 \subsection{Dicionário de Dados}
-A seguir mostramos as tabelas do dicionário de dados.
+A seguir mostramos as tabelas do dicionário de dados. As tabelas de relacionamento foram omitidas.
 
 \begin{quadro}[H]
 	\caption{Legenda}
@@ -56,17 +56,21 @@ A seguir mostramos as tabelas do dicionário de dados.
 		\hline
 		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
 		\hline
-		Cod\_usuario    & VARCHAR      & PK      & Identificador único para usuário         \\ 
+		Cod\_Usuario    & VARCHAR      & PK      & Identificador único para usuário         \\ 
 		\hline
 		Senha           & VARCHAR(50)  &         & Senha de acesso                          \\ 
 		\hline
-		Papel           & VARCHAR(25)  & DEFAULT & Papel de acesso do usuário no sistema    \\ 
+		Tip\_Usuario    & VARCHAR(3)   & NN &    Tipo do usuário no sistema    \\ 
 		\hline
 		E-mail          & VARCHAR(50)  &         & E-mail de acesso                          \\ 
 		\hline
-		Avatar          & VARCHAR(100) &         & Armazenamento de imagem do perfil Google \\ 
+		Avatar          & VARCHAR(100) &         & Armazenamento de imagem do perfil \\ 
 		\hline
 		Ind\_Ativo      & BOOLEAN      & DEFAULT & Indicador de estado                      \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP    &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP    &         & Campo auditável indicando data de alteração                  \\ 
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -82,6 +86,8 @@ A seguir mostramos as tabelas do dicionário de dados.
 		\hline
 		Cod\_Pessoa   & SERIAL      & PK      & Identificador único para pessoa         \\ 
 		\hline
+		Cod\_Usuario  & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_usuario  \\
+		\hline
 		Cod\_Endereco & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_endereco \\ 
 		\hline
 		Nome          & VARCHAR(50) & NN      & Nome                                    \\ 
@@ -93,6 +99,10 @@ A seguir mostramos as tabelas do dicionário de dados.
 		CPF           & VARCHAR(13) & NN, UQ  & Cadastro de Pessoa Física               \\ 
 		\hline
 		Ind\_Ativo    & BOOLEAN     & DEFAULT & Indicador de estado                     \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP &         & Campo auditável indicando data de alteração        \\ 
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -116,33 +126,23 @@ A seguir mostramos as tabelas do dicionário de dados.
 		\hline
 		Titulo        & VARCHAR(30) &         & Titulo da vaga                          \\ 
 		\hline
-		Cod\_endereco & SERIAL      & FK NN   & Chave estrangeira de tb\_endereco \\ 
+		Curso         & VARCHAR(50) &         & Curso da vaga                          \\
+		\hline
+		Carga\_Horaria & INTEGER    & CK      & Carga horária da vaga                          \\
+		\hline
+		Modalidade     & CHAR       &         & Modalidade da vaga                          \\
+		\hline   
+		Cod\_Endereco & SERIAL      & FK NN   & Chave estrangeira de tb\_endereco \\ 
 		\hline
 		Ind\_Ativo    & BOOLEAN     & DEFAULT & Indicador de estado da vaga             \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP &         & Campo auditável indicando data de alteração        \\ 
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
 	\label{campos-vaga}
-\end{quadro}
-
-\begin{quadro}[H]
-	\caption{Campos de Curso}
-	\centering
-	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
-		\hline
-		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
-		\hline
-		Cod\_Curso  & SERIAL      & PK      & Identificador único\\ 
-		\hline
-		Descricao   & VARCHAR(50) & NN, UQ  & Descrição do curso  \\ 
-		\hline
-		Tipo\_Curso & CHAR(1)     & NN      & Tipo do Curso) \\ 
-		\hline
-		Ind\_Ativo  & BOOLEAN     & DEFAULT & Indicador de estado de tb\_curso \\ 
-		\hline
-	\end{tabular}
-	\fonte{Os Autores}
-	\label{campos-curso}
 \end{quadro}
 
 \begin{quadro}[H]
@@ -152,14 +152,19 @@ A seguir mostramos as tabelas do dicionário de dados.
 		\hline
 		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
 		\hline
-		Cod\_Estudante         & VARCHAR & PK         & Identificador único  \\ \hline
-		Cod\_Pessoa            & SERIAL  & FK, NN, UQ & Chave estrangeira de tb\_pessoa            \\ 
+		Cod\_Estudante         & VARCHAR      & PK          & Identificador único  \\ 
 		\hline
-		Cod\_Hist\_Escolar     & SERIAL  & FK, NN     & Chave estrangeira de tb\_hist\_escolar     \\ 
+		Cod\_Pessoa            & SERIAL       & FK, NN, UQ  & Chave estrangeira de tb\_pessoa            \\ 
 		\hline
-		Cod\_Exp\_Profissional & SERIAL  & FK         & Chave estrangeira  de tb\_exp\_profissional \\ 
+		Nvl\_Escolaridade      & VARCHAR(50)  &             & Nível de escolaridade do estudante     \\ 
 		\hline
-		Ind\_Ativo             & BOOLEAN & DEFAULT    & Indicador de estado do estudante            \\ 
+		Cod\_Exp\_Profissional & SERIAL       & FK          & Chave estrangeira  de tb\_exp\_profissional \\ 
+		\hline
+		Ind\_Ativo             & BOOLEAN      & DEFAULT     & Indicador de estado do estudante            \\ 
+		\hline
+		Data\_Inclusao         & TIMESTAMP    &             & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao        & TIMESTAMP    &             & Campo auditável indicando data de alteração        \\ 
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -173,17 +178,23 @@ A seguir mostramos as tabelas do dicionário de dados.
 		\hline
 		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
 		\hline
-		Cod\_Empresa   & SERIAL      & PK      & Identificador único para a empresa      \\ 
+		Cod\_Empresa    & SERIAL      & PK      & Identificador único para a empresa      \\ 
 		\hline
-		Razao\_Social  & VARCHAR(50) & NN      & Razão social da empresa                 \\ 
+		Cod\_Usuario    & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_usuario  \\
 		\hline
-		Nome\_Fantasia & VARCHAR(50) &         & Nome fantasia da empresa                \\ 
+		Razao\_Social   & VARCHAR(50) & NN      & Razão social da empresa                 \\ 
 		\hline
-		CNPJ           & VARCHAR(20) & NN, UQ  & Cadastro Nacional de Pessoas Jurídicas  \\ 
+		Nome\_Fantasia  & VARCHAR(50) &         & Nome fantasia da empresa                \\ 
 		\hline
-		Cod\_Endereco  & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_endereco \\ 
+		CNPJ            & VARCHAR(20) & NN, UQ  & Cadastro Nacional de Pessoas Jurídicas  \\ 
 		\hline
-		Ind\_Ativo     & BOOLEAN     & DEFAULT & Indicador de estado da empresa          \\ 
+		Cod\_Endereco   & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_endereco \\ 
+		\hline
+		Ind\_Ativo      & BOOLEAN     & DEFAULT & Indicador de estado da empresa          \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP   &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP   &         & Campo auditável indicando data de alteração        \\ 
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
@@ -191,7 +202,7 @@ A seguir mostramos as tabelas do dicionário de dados.
 \end{quadro}
 
 \begin{quadro}[H]
-	\caption{Campos de Representante RH}
+	\caption{Campos de Representante}
 	\centering
 	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
 		\hline
@@ -206,6 +217,162 @@ A seguir mostramos as tabelas do dicionário de dados.
 		Cargo              & VARCHAR(50) & NN      & Descrição do cargo do representante \\ 
 		\hline
 		Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado do representante   \\ 
+		\hline
+		Data\_Inclusao     & TIMESTAMP   &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao    & TIMESTAMP   &         & Campo auditável indicando data de alteração        \\ 
+		\hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{campos-rh}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos de Endereço}
+	\centering
+	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
+		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_Endereco    & SERIAL      & PK      & Identificador único                \\ 
+		\hline
+		Logradouro        & VARCHAR(50)      & NN      & Logradouro do endereço    \\ 
+		\hline
+		Numero            & SMALLINT         &         & Número do endereço \\ 
+		\hline
+		Bairro            & VARCHAR(50)      & NN      & Bairro do endereço \\ 
+		\hline
+		Cidade            & VARCHAR(50)      & NN      & Cidade do endereço   \\ 
+		\hline
+		Estado            & CHAR(2)          & NN      & Estado do endereço \\ 
+		\hline
+		Cep               & CHAR(9)          &         & CEP do endereço \\ 
+		\hline
+		Complemento       & VARCHAR(50)      &         & Complemento do endereço \\ 
+		\hline
+		Ponto\_Referencia & VARCHAR(50)      &         & Ponto de referência do endereço \\ 
+		\hline
+		Ind\_Ativo        & BOOLEAN          & DEFAULT & Indicador de estado do endereço   \\ 
+		\hline
+		Data\_Inclusao    & TIMESTAMP        &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao   & TIMESTAMP        &         & Campo auditável indicando data de alteração        \\ 
+		\hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{campos-rh}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos de Competência}
+	\centering
+	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
+		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_Competencia & SERIAL      & PK      & Identificador único                \\ 
+		\hline
+		Descricao        & VARCHAR(50)      &    & Descrição da competência    \\ 
+		\hline
+		Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado da competência   \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP &         & Campo auditável indicando data de alteração        \\ 
+		\hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{campos-rh}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos de Contato}
+	\centering
+	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
+		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_Contato  & SERIAL      & PK      & Identificador único                \\ 
+		\hline
+		Tip\_Contato        & VARCHAR(10)      & CK    & Tipo do contato    \\ 
+		\hline
+		Desc\_Contato       & VARCHAR(50) & & Descrição do contato \\ 
+		\hline
+		Valor\_Contato & VARCHAR(100) &         & Valor do contato \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP &         & Campo auditável indicando data de alteração        \\ 
+		\hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{campos-rh}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos de Experiência Profissional}
+	\centering
+	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
+		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_Exp\_Profissional  & SERIAL      & PK      & Identificador único                \\ 
+		\hline
+		Cod\_Estudante        & SERIAL      & FK, NN    & Chave estrangeira de tb\_estudante    \\ 
+		\hline
+		Cod\_Endereco  & SERIAL      & FK, NN  & Chave estrangeira vinda de tb\_endereco \\ 
+		\hline
+		Nome\_Empresa & VARCHAR(100) &         & Nome da empresa da experiência \\ 
+		\hline
+		Cargo  & VARCHAR(75) &         & Cargo da experiência \\ 
+		\hline
+		Descricao  & TEXT &         & Breve descrição da experiência \\
+		\hline
+		Data\_Inicio  & TIMESTAMP &         & Data de início da experiência \\
+		\hline
+		Data\_Fim  & TIMESTAMP &         & Data de fim da experiência \\
+		\hline
+		Data\_Inclusao  & TIMESTAMP &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP &         & Campo auditável indicando data de alteração        \\ 
+		\hline
+	\end{tabular}
+	\fonte{Os Autores}
+	\label{campos-rh}
+\end{quadro}
+
+\begin{quadro}[H]
+	\caption{Campos de Histórico Escolar}
+	\centering
+	\begin{tabular}{| l | l | l | p{0.3\textwidth} |}
+		\hline
+		\thead{Campo} & \thead{Tipo} & \thead{Restrição}	& \thead{Descrição}\\
+		\hline
+		Cod\_Hist\_Escolar & SERIAL      & PK      & Identificador único                \\ 
+		\hline
+		Cod\_Estudante        & SERIAL      & FK, NN    & Chave estrangeira de tb\_estudante    \\ 
+		\hline
+		Nvl\_Escolaridade        & VARCHAR(50)      & & Nìvel de escolaridade    \\ 
+		\hline
+		Curso  & VARCHAR(50 )& & Curso do histórico \\ 
+		\hline
+		Inst\_Ensino & VARCHAR(50) &         & Instituição de ensino do histórico \\ 
+		\hline
+		Data\_Inicio  & TIMESTAMP &         & Data de início do histórico \\
+		\hline
+		Data\_Fim  & TIMESTAMP &         & Data de fim do histórico \\
+		\hline
+		Status  & VARCHAR(50) &         & Status do histórico escolar \\
+		\hline
+		Data\_Inicio  & TIMESTAMP &         & Data de início da experiência \\
+		\hline
+		Data\_Fim  & TIMESTAMP &         & Data de fim da experiência \\
+		\hline
+		Ind\_Ativo         & BOOLEAN     & DEFAULT & Indicador de estado do histórico   \\ 
+		\hline
+		Data\_Inclusao  & TIMESTAMP &         & Campo auditável indicando data de inclusão        \\ 
+		\hline
+		Data\_Alteracao & TIMESTAMP &         & Campo auditável indicando data de alteração        \\ 
 		\hline
 	\end{tabular}
 	\fonte{Os Autores}
